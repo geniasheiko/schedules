@@ -1,0 +1,71 @@
+.daySchedule {
+  border: 1px solid #43a047;
+  background: #f1f8e9;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px 0 #a5d6a733;
+}
+
+.locationBlock {
+  margin-bottom: 1.5rem;
+}
+
+.locationBlock > h3 {
+  color: #2e7d32;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #43a047;
+  padding-bottom: 0.3rem;
+}
+
+.timeRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeCell {
+  width: 70px;
+  color: #388e3c;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.slotCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1; /* чтобы занять оставшееся пространство */
+}
+
+.slotCell input[type="text"] {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.slotCell input[type="text"]:focus {
+  border-color: #43a047;
+  outline: none;
+  background-color: #e8f5e9;
+}
+
+.readonlyInput {
+  flex: 1;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
