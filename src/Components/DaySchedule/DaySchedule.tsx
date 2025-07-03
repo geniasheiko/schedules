@@ -39,7 +39,6 @@ const scheduleTimes:Record<string, Record<string, string[]>> =  {
 }
 
 export const DaySchedule: React.FC<DayScheduleProps> = ({ dayName, dayDate, slots, onBook, onDelete, loading }) => {
-  const timeSlots = scheduleTimes[dayName] || []
   //для записи
   const [inputs, setInputs] = useState<Record<string, string[]>>({})
 
