@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styles from "./DaySchedule.module.css";
-import { ActionButton } from "../ActionButton/ActionButton";
+import { ActionButton } from "../Buttons/ActionButton/ActionButton";
 import type { ScheduleSlot } from "../../types/schedule";
 
 type DayScheduleProps = {

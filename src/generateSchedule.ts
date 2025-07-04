@@ -1,6 +1,6 @@
 //Это скрипт запускается только один раз в ручную, командой 
 import 'dotenv/config'  //автоматически подгружает .env файл в process.env
-import { supabase } from './utils/supabase';
+import { supabase } from './utils/supabase/supabase';
 
 
 
