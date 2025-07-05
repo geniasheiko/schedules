@@ -1,0 +1,35 @@
+.toggleButton {
+  padding: 8px 20px;
+  font-size: 16px;
+  background: #f0f4ff;
+  border: 1px solid #02596d;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #189540;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.toggleButton:hover {
+  background: #e0eaff;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.arrowForward {
+  border-left: 10px solid #19674a;
+  margin-left: 4px;
+}
+
+.arrowBack {
+  border-right: 10px solid #223366;
+  margin-right: 4px;
+}

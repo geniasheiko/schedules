@@ -2,25 +2,26 @@ import { useMemo } from "react";
 import { days } from "../../constatns/days";
 import { DaySchedule } from "../DaySchedule/DaySchedule";
 import styles from "./SchedulePage.module.css";
-import { useBookSlotMutation, useDeleteSlotMutation, useGetSchedulesQuery} from "../../store/scheduleApi";
+import { useBookSlotMutation, useDeleteSlotMutation, useGetSchedulesQuery } from "../../store/scheduleApi";
 import { DateOfDate } from "../DateOfDay/DateOfDay";
 import { WeekToggleButton } from "../Buttons/WeekToggleButton/WeekToggleButton";
 import { getWeekDates } from "../../features/getWeekDates";
-import { useWeekToggle } from "../../utils/hooks/useWeekToggle";
 import { useSchedulesRealtime } from "../../utils/realtime/realtime";
+import { useWeekToggle } from "../../utils/hooks/SchedulePage/useWeekToggle";
 
 export const SchedulePage = () => {
 
-  //хук для автоматического обновления данных на страницы
-  useSchedulesRealtime();
+  const { data: schedules = [], isLoading, refetch } = useGetSchedulesQuery();
 
-  const { data: schedules = [], isLoading } = useGetSchedulesQuery();
+  //хук для автоматического обновления данных на страницы
+  useSchedulesRealtime(refetch);
+
   const [bookSlot] = useBookSlotMutation();
   const [deleteSlot] = useDeleteSlotMutation();
 
   const {
-    uniqueWeekStarts, 
-    selectedWeek, 
+    uniqueWeekStarts,
+    selectedWeek,
     // setSelectedWeek, 
     handleToggleWeek
   } = useWeekToggle(schedules)
@@ -30,20 +31,20 @@ export const SchedulePage = () => {
     return schedules.filter((s) => s.week_start === selectedWeek);
   }, [schedules, selectedWeek]);
 
- 
 
-const weekDates = selectedWeek ? getWeekDates(selectedWeek) : [];
+
+  const weekDates = selectedWeek ? getWeekDates(selectedWeek) : [];
 
   return (
     <div className={styles.centerWrapper}>
-       <div className={styles.header}>
-     <WeekToggleButton
-        uniqueWeekStarts={uniqueWeekStarts}
-        selectedWeek={selectedWeek}
-        onToggle={handleToggleWeek}
-      />
-      <DateOfDate selectedWeek={selectedWeek}/>
-   </div>
+      <div className={styles.header}>
+        <WeekToggleButton
+          uniqueWeekStarts={uniqueWeekStarts}
+          selectedWeek={selectedWeek}
+          onToggle={handleToggleWeek}
+        />
+        <DateOfDate selectedWeek={selectedWeek} />
+      </div>
 
       <div className={styles.wrapper}>
         {days.map((day, i) => (

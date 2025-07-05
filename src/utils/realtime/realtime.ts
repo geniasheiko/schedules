@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { supabase } from "../supabase/supabase";
 
-export const useSchedulesRealtime = () => {
+export const useSchedulesRealtime = (refetch: () => void) => {
     useEffect(() => {
         const channel = supabase
             .channel('schedules')
@@ -11,12 +11,16 @@ export const useSchedulesRealtime = () => {
                     schema: 'public', // Subscribes to the "public" schema in Postgres
                     event: '*',       // Listen to all changes
                 },
-                (payload) => console.log(payload)
+                (payload) => {
+                    console.log("Realtime payload", payload)
+                    refetch();
+                }
             )
             .subscribe();
-// удаляет подписку
-            return() => {
-                supabase.removeChannel(channel);
-            }
-    }, [])
+        // удаляет подписку при вымонтировании компонента
+        return () => {
+            supabase.removeChannel(channel);
+        }
+    }, [refetch]
+)
 }
