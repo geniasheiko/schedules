@@ -5,7 +5,7 @@ import type { ScheduleSlot } from "../../types/schedule";
 export function useDayScheduleHandlers(
     onBook: (slotId: string, name: string) => void,
     onDelete: (slotId: string) => void,
-    loading: boolean
+    _loading: boolean
 ) {
     //для записи
     const [inputs, setInputs] = useState<Record<string, string[]>>({});
