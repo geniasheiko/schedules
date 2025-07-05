@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { ScheduleSlot } from "../../types/schedule";
+import type { ScheduleSlot } from "../../../types/schedule";
 
 export const useWeekToggle = (schedules: ScheduleSlot[]) => {
  const uniqueWeekStarts = useMemo(() => {
