@@ -109,15 +109,15 @@ export const LifeMinistryPage = () => {
                     <div className={`${styles.footerItem} ${styles.service}`}>
                         <h3 className={styles.footerTitle}>ОБСЛУГОВУВАННЯ</h3>
                         <ul className={styles.footerList}>
-                            <li className={styles.footerItem}>
+                            <li className={styles.footerListItem}>
                                 <span className={styles.personRole}>Мікшер | Сцена:</span>
                                 <span className={styles.person}>Залокоцький Н. | Дзюбанов А.</span>
                             </li>
-                            <li className={styles.footerItem}>
+                            <li className={styles.footerListItem}>
                                 <span className={styles.personRole}>Обслуговуючі:</span>
                                 <span className={styles.person}>Паталаха М. | Кондаревич В.</span>
                             </li>
-                            <li className={styles.footerItem}>
+                            <li className={styles.footerListItem}>
                                 <span className={styles.personRole}>Мікрофони:</span>
                                 <span className={styles.person}>Сворень Я. | Салань А.</span>
                             </li>
@@ -126,7 +126,7 @@ export const LifeMinistryPage = () => {
                     <div className={`${styles.footerItem} ${styles.cleaning}`}>
                         <h3 className={styles.footerTitle}>ПРИБИРАННЯ</h3>
                         <div className={styles.footerList}>
-                            <div className={styles.footerItem}>
+                            <div className={styles.footerListItem}>
                                 <span className={styles.personRole}>Група</span>
                                 <span className={styles.person}>1</span>
                             </div>
