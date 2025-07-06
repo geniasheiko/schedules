@@ -1,4 +1,7 @@
 import styles from "./LifeMinistryPage.module.css";
+import treasuresImg from "../assets/treasures.png";
+import applyImg from "../assets/apply.png";
+import livingImg from "../assets/living.png";
 
 export const LifeMinistryPage = () => {
     return (
@@ -24,7 +27,7 @@ export const LifeMinistryPage = () => {
                     </div>
                     <div className={styles.treasuresBlock}>
                         <div className={styles.treasuresTitle}>
-                            <img className={styles.treasuresImg} src="public/treasures.png" alt="Treasures" />
+                            <img className={styles.treasuresImg} src={treasuresImg} alt="Скарби з Божого Слова" />
                             <h3 className={styles.treasuresText}>СКАРБИ З БОЖОГО СЛОВА</h3>
                         </div>
                         <ul className={styles.treasuresList}>
@@ -47,7 +50,7 @@ export const LifeMinistryPage = () => {
                     </div>
                     <div className={styles.ministryBlock}>
                         <div className={styles.ministryTitle}>
-                            <img className={styles.ministryImg} src="public/apply.png" alt="Ministry" />
+                            <img className={styles.ministryImg} src={applyImg} alt="Вдосконалюймо своє служіння" />
                             <h3 className={styles.ministryText}>ВДОСКОНАЛЮЙМО СВОЄ СЛУЖІННЯ</h3>
                         </div>
                         <ul className={styles.ministryList}>
@@ -75,7 +78,7 @@ export const LifeMinistryPage = () => {
                     </div>
                     <div className={styles.lifeBlock}>
                         <div className={styles.lifeTitle}>
-                            <img className={styles.lifeImg} src="public/living.png" alt="Ministry" />
+                            <img className={styles.lifeImg} src={livingImg} alt="Християнське життя" />
                             <h3 className={styles.lifeText}>ХРИСТИЯНСЬКЕ ЖИТТЯ</h3>
                         </div>
                         <div className={styles.middleBlock}>
