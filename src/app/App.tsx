@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { SchedulePage } from "../Components/SchedulePage/SchedulePage";
 import { LifeMinistryPage } from "../pages/LifeMinistryPage";
 
@@ -7,12 +7,12 @@ import { LifeMinistryPage } from "../pages/LifeMinistryPage";
 
 export const App = () => {
   return (
-    <BrowserRouter basename="/schedules">
+    <HashRouter basename="/schedules">
       <Routes>
         <Route path="/" element={<SchedulePage/>} />
         <Route path="/life-ministry" element={<LifeMinistryPage/>} />
       </Routes>
-    </BrowserRouter> 
+    </HashRouter> 
   )
 }
 
