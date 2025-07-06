@@ -1,0 +1,16 @@
+/* reset styles */
+body{
+    display: unset;
+    margin: unset;
+    min-width: unset;
+    min-height: unset;
+    background: unset;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.title{
+    text-align: center;
+}
