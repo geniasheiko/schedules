@@ -9,6 +9,7 @@ export const useSchedulesRealtime = (refetch: () => void) => {
                 'postgres_changes',
                 {
                     schema: 'public', // Subscribes to the "public" schema in Postgres
+                    table: 'schedules',
                     event: '*',       // Listen to all changes
                 },
                 (payload) => {
@@ -17,7 +18,7 @@ export const useSchedulesRealtime = (refetch: () => void) => {
                 }
             )
             .subscribe();
-        // удаляет подписку при вымонтировании компонента
+        //removes the subscription when the component is unmounted
         return () => {
             supabase.removeChannel(channel);
         }
