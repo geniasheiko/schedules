@@ -7,7 +7,7 @@ import { LifeMinistryPage } from "../pages/LifeMinistryPage";
 
 export const App = () => {
   return (
-    <HashRouter basename="/schedules">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<SchedulePage/>} />
         <Route path="/life-ministry" element={<LifeMinistryPage/>} />
