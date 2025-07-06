@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ScheduleSlot } from "../../../types/schedule";
-
+// кастомный хук для управления выбором недели
 export const useWeekToggle = (schedules: ScheduleSlot[]) => {
+  //Создаёт массив уникальных дат начала недели из всех расписаний
  const uniqueWeekStarts = useMemo(() => {
     const sorted = Array.from(
       new Set(schedules.map((s) => s.week_start))
@@ -18,7 +19,7 @@ useEffect(() => {
     setSelectedWeek(uniqueWeekStarts[0]);
   }
 },[uniqueWeekStarts, selectedWeek])
-
+//Функция для переключения между двумя неделями
  const handleToggleWeek = () => {
     if (uniqueWeekStarts.length < 2) return;
     const currentIndex = uniqueWeekStarts.indexOf(selectedWeek ?? "");
