@@ -13,7 +13,7 @@ export const SchedulePage = () => {
 
   const { data: schedules = [], isLoading, refetch } = useGetSchedulesQuery();
 
-  //хук для автоматического обновления данных на страницы
+  // hook for automatic data update on the page
   useSchedulesRealtime(refetch);
 
   const [bookSlot] = useBookSlotMutation();
