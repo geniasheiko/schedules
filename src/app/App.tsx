@@ -7,9 +7,9 @@ import { LifeMinistryPage } from "../pages/LifeMinistryPage";
 
 export const App = () => {
   return (
-  <BrowserRouter>
+  <BrowserRouter basename="/schedules">
   <Routes>
-  <Route path="/SchedulePage" element={<SchedulePage/>} />
+  <Route path="/" element={<SchedulePage/>} />
   <Route path="/life-ministry" element={<LifeMinistryPage/>} />
    </Routes>
   </BrowserRouter>
