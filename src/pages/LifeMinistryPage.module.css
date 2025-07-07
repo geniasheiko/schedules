@@ -190,6 +190,7 @@ h2:not(.header h2){
     }
     .footerItem.service .footerListItem{
         display: flex;
+        align-items: baseline;
         flex-wrap: wrap;
     }
 }
