@@ -1,0 +1,39 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: #f7fafd;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 48px;
+}
+
+.burger {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: #02596d;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.admin {
+  background: none;
+  border: 1px solid #02596d;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  color: #02596d;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.admin:hover {
+  background: #e0eaff;
+}
