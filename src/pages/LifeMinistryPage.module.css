@@ -6,11 +6,205 @@ body{
     min-height: unset;
     background: unset;
 }
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+h3 {
+    margin: 0;
+    line-height: 1;
+}
+/* end reset styles */
 
-.container{
+h2:not(.header h2){
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
-.title{
-    text-align: center;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.title .subtitle {
+    font-size: 30px;
+}
+
+.time{
+    margin-right: 15px;
+    color: #555;
+}
+
+.treasuresNumber,
+.ministryNumber,
+.lifeNumber {
+    margin: 0 15px 0 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.treasuresNumber,
+.treasuresText {
+    color: #3C7F8B;
+}
+
+.ministryNumber,
+.ministryText {
+    color: #C78808;
+}
+
+.lifeNumber,
+.lifeText {
+    color: #98121D;
+}
+
+.weeksContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.weeksItem {
+    width: calc(50% - 40px);
+    margin-bottom: 40px;
+}
+
+.weeksItem:nth-child(odd){
+    padding-right: 40px;
+    border-right: 1px dashed #000;
+}
+
+.weekTitle {}
+.weekContent {
+    padding-left: 15px;
+}
+.topBlock {
+    margin-bottom: 10px;
+}
+
+.chairman {}
+.personRole {
+    margin-right: 4px; 
+    font-weight: 600;   
+    color: #555;
+}
+.person {
+    font-size: 18px;
+}
+
+.introductionConclusion {
+    font-weight: 600;
+}
+
+.introductionConclusion .time,
+.introductionConclusion .introductionConclusionTime {
+    font-weight: 400;
+}
+
+.treasuresBlock {}
+
+.treasuresTitle,
+.ministryTitle,
+.lifeTitle {
+    display: flex;
+    align-items: end;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.treasuresImg,
+.ministryImg,
+.lifeImg {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.treasuresText {}
+.treasuresList {}
+.treasuresItem {}
+.ministryBlock {}
+
+.ministryText {}
+.ministryList {}
+.ministryItem {}
+.lifeBlock {}
+.middleBlock {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.middleBlock .time {
+    font-weight: 400;
+}
+
+.lifeText {}
+.lifeList {
+    margin-top: 0;
+}
+.lifeItem {}
+.bottomBlock {
+}
+.lastItem {}
+.weekFooter {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 2px solid #000;
+}
+.footerItem.service {
+    
+}
+.footerItem.cleaning{
+    display: flex;
+    align-items: baseline;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #000;
+}
+.footerTitle {
+    color: #555;
+    margin-right: 20px;
+}
+.footerList {}
+.cleaning {}
+
+@media(max-width: 768px){
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+    .weeksItem {
+        width: calc(100% - 20px);
+    }
+    .header {
+        flex-direction: column;
+    }
+    .header h1 {
+        font-size: 34px;
+        margin-bottom: 0;
+    }
+    .title .subtitle {
+        font-size: 30px;
+    }
+    .footerItem.service .footerListItem{
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+    .weeksItem:nth-child(odd){
+        border: none;
+    }
 }
