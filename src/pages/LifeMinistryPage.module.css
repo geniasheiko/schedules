@@ -1,3 +1,5 @@
+@import url('./LifeMinistryPagePrint.module.css');
+
 /* reset styles */
 body{
     display: unset;
@@ -18,7 +20,7 @@ h3 {
 }
 /* end reset styles */
 
-h2:not(.header h2){
+h2:not(.headerTitle h2){
     font-weight: 600;
     color: #555;
     margin-bottom: 10px;
@@ -32,7 +34,7 @@ h2:not(.header h2){
     padding: 20px;
 }
 
-.header {
+.headerTitle {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -77,6 +79,8 @@ h2:not(.header h2){
 }
 
 .weeksItem {
+    display: flex;
+    flex-direction: column;
     width: calc(50% - 40px);
     margin-bottom: 40px;
 }

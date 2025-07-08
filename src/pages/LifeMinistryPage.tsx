@@ -6,7 +6,7 @@ import livingImg from "../assets/living.png";
 export const LifeMinistryPage = () => {
     return (
     <div className={styles.container}>
-        <header className={styles.header}>
+        <header className={styles.headerTitle}>
             <h1 className={styles.title}>ЗБІР "ТРУСКАВЕЦЬ"</h1>
             <h2 className={styles.subtitle}>Розклад зібрань серед тижня</h2>
         </header>
