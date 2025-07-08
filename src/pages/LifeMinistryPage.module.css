@@ -88,7 +88,6 @@ h2:not(.headerTitle h2){
     border-right: 1px dashed #000;
 }
 
-.weekTitle {}
 .weekContent {
     padding-left: 15px;
 }
@@ -96,7 +95,6 @@ h2:not(.headerTitle h2){
     margin-bottom: 10px;
 }
 
-.chairman {}
 .personRole {
     margin-right: 4px; 
     font-weight: 600;   
@@ -115,8 +113,6 @@ h2:not(.headerTitle h2){
     font-weight: 400;
 }
 
-.treasuresBlock {}
-
 .treasuresTitle,
 .ministryTitle,
 .lifeTitle {
@@ -134,15 +130,6 @@ h2:not(.headerTitle h2){
     margin-right: 10px;
 }
 
-.treasuresText {}
-.treasuresList {}
-.treasuresItem {}
-.ministryBlock {}
-
-.ministryText {}
-.ministryList {}
-.ministryItem {}
-.lifeBlock {}
 .middleBlock {
     margin-top: 15px;
     font-weight: 600;
@@ -152,22 +139,16 @@ h2:not(.headerTitle h2){
     font-weight: 400;
 }
 
-.lifeText {}
 .lifeList {
     margin-top: 0;
 }
-.lifeItem {}
-.bottomBlock {
-}
-.lastItem {}
+
 .weekFooter {
     padding-top: 15px;
     margin-top: 15px;
     border-top: 2px solid #000;
 }
-.footerItem.service {
-    
-}
+
 .footerItem.cleaning{
     display: flex;
     align-items: baseline;
@@ -179,8 +160,6 @@ h2:not(.headerTitle h2){
     color: #555;
     margin-right: 20px;
 }
-.footerList {}
-.cleaning {}
 
 @media(max-width: 768px){
     .container {
@@ -212,7 +191,7 @@ h2:not(.headerTitle h2){
 }
 
 @page {
-    margin: 10px 30px 0 40px;
+    margin: 10px 30px 0 30px;
     padding: 0;
 }
 
@@ -236,6 +215,7 @@ h2:not(.headerTitle h2){
 
     .headerTitle {
         font-size: 8pt;
+        margin-bottom: 20px;
         flex-direction: row;
     }
 
@@ -252,14 +232,18 @@ h2:not(.headerTitle h2){
 
     .weeksItem {
         width: 50% !important;
-        margin-bottom: 6px !important;
+        margin-bottom: 20px !important;
         box-sizing: border-box;
         page-break-inside: avoid;
     }
 
-    .weekContent, .weekFooter {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+    .weeksItem:nth-child(even){
+        border-left: 1px dashed #000;
+        padding-left: 40px;
+    }
+
+    .weekContent {
+        padding-left: 5px !important;
     }
 
     .weekTitle {
@@ -270,11 +254,13 @@ h2:not(.headerTitle h2){
 
     .footerTitle {
         font-size: 10pt !important;
+        font-weight: 700;
     }
 
     .treasuresTitle, .ministryTitle, .lifeTitle {
         margin: 0 0 4px 0 !important;
         padding: 0 0 4px 0 !important;
+        width: 85% !important;
     }
 
     ul {
@@ -288,11 +274,19 @@ h2:not(.headerTitle h2){
 
     .treasuresText, .ministryText, .lifeText {
         font-size: 9pt !important;
-        font-weight: 600;
+        font-weight: 700;
     }
 
-    .person, .personRole, .time {
+    .personRole, .time, .introductionConclusion {
         font-size: 8pt !important;
+    }
+
+    .person {
+        font-size: 9pt !important;
+    }
+
+    .personRole{
+        padding-right: 10px;
     }
 
     .treasuresImg, .ministryImg, .lifeImg {
@@ -317,16 +311,12 @@ h2:not(.headerTitle h2){
         box-shadow: none !important;
         background: none !important;
     }
-
-    section.weeksItem {
-        page-break-after: auto !important;
-        page-break-before: auto !important;
-    }
     
     .treasuresNumber,
     .ministryNumber,
     .lifeNumber {
-        font-size: 8pt;
+        font-size: 9pt !important;
+        font-weight: 700 !important;
     }
     
 }
