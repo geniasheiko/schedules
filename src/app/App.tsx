@@ -12,6 +12,7 @@ export const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<SchedulePage/>} />
+        {/* <Route path="/admin" element={<AdminLoginPage/>} */}
         <Route path="/life-ministry" element={<LifeMinistryPage/>} />
       </Routes>
     </HashRouter> 

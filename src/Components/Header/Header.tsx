@@ -1,14 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
+import { Menu } from "./Menu/Menu";
 export const Header = () => {
-    return (
-        <header className={styles.header}>
-      <button className={styles.burger} aria-label="Open menu">
-        &#9776;
-      </button>
-      <div className={styles.spacer}></div>
-      <button className={styles.admin} aria-label="Admin login">
-        Admin
-      </button>
-    </header>
-    )
+
+  const navigate = useNavigate();
+
+  return (
+    <div className={styles.header}>
+      <Menu />
+      <div className={styles.AdminButton}>
+        <button onClick={() => navigate("/admin")}>
+          Admin
+        </button>
+      </div>
+    </div>
+  )
 }
