@@ -37,3 +37,9 @@
 .admin:hover {
   background: #e0eaff;
 }
+
+@media print {
+    .header{
+        display: none !important;
+    }
+}
