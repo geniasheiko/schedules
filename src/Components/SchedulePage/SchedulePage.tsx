@@ -5,7 +5,7 @@ import styles from "./SchedulePage.module.css";
 import { useBookSlotMutation, useDeleteSlotMutation, useGetSchedulesQuery } from "../../store/scheduleApi";
 import { DateOfDate } from "../DateOfDay/DateOfDay";
 import { WeekToggleButton } from "../Buttons/WeekToggleButton/WeekToggleButton";
-import { getWeekDates } from "../../features/getWeekDates";
+import { getWeekDates } from "../../utils/getWeekDates";
 import { useSchedulesRealtime } from "../../utils/realtime/realtime";
 import { useWeekToggle } from "../../utils/hooks/SchedulePage/useWeekToggle";
 
