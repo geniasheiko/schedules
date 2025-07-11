@@ -11,6 +11,12 @@
   min-height: 48px;
 }
 
+.AdminButton button {
+  margin: 10px 0;
+  border: 1px solid #02596d;
+  border-radius: 6px;
+}
+
 .burger {
   background: none;
   border: none;
@@ -36,6 +42,12 @@
 
 .admin:hover {
   background: #e0eaff;
+}
+
+@media (max-width: 768px){
+  .header {
+    align-items: start;
+  }
 }
 
 @media print {

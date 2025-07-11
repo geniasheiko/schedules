@@ -1,0 +1,15 @@
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.link {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.link:not(:last-child):after{
+    content: "|";
+    margin-left: 10px;
+}

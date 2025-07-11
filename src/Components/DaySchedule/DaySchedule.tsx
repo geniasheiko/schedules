@@ -62,42 +62,44 @@ export const DaySchedule = ({
             return (
               <div key={`${location}_${time}`} className={styles.timeRow}>
                 <div className={styles.timeCell}>{time}</div>
-                {slotsAtTime.map((current) =>
-                  current.is_booked ? (
-                    <div key={current.id} className={styles.slotCell}>
-                      <input
-                        readOnly
-                        value={current.booked_person_name ?? "-"}
-                        className={styles.readonlyInput}
-                      />
-                      {localStorage.getItem(current.id) === current.booked_person_name && (
-                        <ActionButton
-                          label="Видалити"
-                          onClick={() => handleDelete(current.id)}
-                          disabled={loading}
-                          color="primary"
+                <div className={styles.slotsCellWrapper}>
+                  {slotsAtTime.map((current) =>
+                    current.is_booked ? (
+                      <div key={current.id} className={styles.slotCell}>
+                        <input
+                          readOnly
+                          value={current.booked_person_name ?? "-"}
+                          className={styles.readonlyInput}
                         />
-                      )}
-                    </div>
-                  ) : (
-                    <div key={current.id} className={styles.slotCell}>
-                      <input
-                        type="text"
-                        placeholder="Ім'я"
-                        value={inputs[current.id] || ""}
-                        onChange={(e) => handleInputChange(current.id, e.target.value)}
-                        disabled={loading}
-                        className={styles.input}
-                      />
-                      <ActionButton
-                        label="Записатись"
-                        onClick={() => handleBook(current.id, current)}
-                        disabled={loading}
-                        color="danger"
-                      />
-                    </div>
-                  )
-                )}
+                        {localStorage.getItem(current.id) === current.booked_person_name && (
+                          <ActionButton
+                            label="Видалити"
+                            onClick={() => handleDelete(current.id)}
+                            disabled={loading}
+                            color="primary"
+                          />
+                        )}
+                      </div>
+                    ) : (
+                      <div key={current.id} className={styles.slotCell}>
+                        <input
+                          type="text"
+                          placeholder="Ім'я"
+                          value={inputs[current.id] || ""}
+                          onChange={(e) => handleInputChange(current.id, e.target.value)}
+                          disabled={loading}
+                          className={styles.input}
+                        />
+                        <ActionButton
+                          label="Записатись"
+                          onClick={() => handleBook(current.id, current)}
+                          disabled={loading}
+                          color="danger"
+                        />
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
             );
           })}

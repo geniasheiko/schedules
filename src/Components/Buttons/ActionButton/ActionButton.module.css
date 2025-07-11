@@ -1,25 +1,22 @@
 .button {
-  color: #f0f4f0;
-  background: #13a437;
-  border: none;
-  border-radius: 4px;
-  padding: 0.3em 1em;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  margin-left: 8px;
-  transition: background 0.2s;
-   min-width: 120px;
-   box-sizing: border-box;
-  text-align: center;
+  margin-left: 15px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: unset;
+  padding: 0;
 }
 
 .primary {
-  background: #eb6212;
-   margin-left: 0;
+  background-image: url('../../../assets/trash.svg');
 }
 
 .danger {
-  background: #66bb6a;
-  margin-left: 8px;
+  background-image: url('../../../assets/pen-to-square.svg');
 }
 
 .button:disabled {

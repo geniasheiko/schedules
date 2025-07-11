@@ -18,7 +18,7 @@ h3 {
 }
 /* end reset styles */
 
-h2:not(.headerTitle h2){
+h2 {
     font-weight: 600;
     color: #555;
     margin-bottom: 10px;
@@ -38,8 +38,10 @@ h2:not(.headerTitle h2){
     align-items: baseline;
 }
 
-.title .subtitle {
+.headerTitle h2.subtitle {
     font-size: 30px;
+    border: none;
+    color: unset;
 }
 
 .time{

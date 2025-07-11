@@ -1,6 +1,5 @@
 import styles from "./ActionButton.module.css";
 
-
 type ActionButtonProps = {
   label: string;
   onClick: () => void;
@@ -8,15 +7,12 @@ type ActionButtonProps = {
   color?: "primary" | "danger";
 };
 
-export const ActionButton = ({label, onClick, disabled, color = "primary",
-}: ActionButtonProps) => {
- return (
-  <button
-    onClick={onClick}
-    disabled={disabled}
-   className={`${styles.button} ${styles[color]}`}
-  >
-    {label}
-  </button>
-);
+export const ActionButton = ({onClick, disabled, color = "primary"}: ActionButtonProps) => {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`${styles.button} ${styles[color]}`}
+    ></button>
+  );
 }
