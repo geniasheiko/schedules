@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { scheduleApi } from "./scheduleApi";
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { authApi } from '../app/admin/supabaseAuth';
+import { authApi } from '../features/auth/supabaseAuth';
+
 
 
 export const store = configureStore({

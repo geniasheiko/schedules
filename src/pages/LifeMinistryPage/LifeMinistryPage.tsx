@@ -1,7 +1,7 @@
 import styles from "./LifeMinistryPage.module.css";
-import treasuresImg from "../assets/treasures.png";
-import applyImg from "../assets/apply.png";
-import livingImg from "../assets/living.png";
+import treasuresImg from "../../assets/treasures.png";
+import applyImg from "../../assets/apply.png";
+import livingImg from "../../assets/living.png";
 
 export const LifeMinistryPage = () => {
     return (
