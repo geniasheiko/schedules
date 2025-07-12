@@ -3,18 +3,23 @@
   top: 0;
   z-index: 100;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 10px 18px;
-  background: #f7fafd;
   border-bottom: 1px solid #e0e0e0;
   min-height: 48px;
 }
 
-.AdminButton button {
-  margin: 10px 0;
-  border: 1px solid #02596d;
-  border-radius: 6px;
+.topLinks {
+  width: 100%;
+  text-align: right;
+  background-color: #3C3C3C;
+  padding: 5px 0;
+}
+
+.loginLink {
+  color: #c2d4f1;
+  margin: 0 15px;
+  align-self: flex-end;
 }
 
 .burger {

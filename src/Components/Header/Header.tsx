@@ -1,18 +1,23 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { Menu } from "../Menu/Menu";
+// import { useNavigate } from "react-router-dom";
+
 export const Header = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className={styles.header}>
-      <Menu />
-      <div className={styles.AdminButton}>
-        <button onClick={() => navigate("/admin/login")}>
+      <div className={styles.topLinks}>
+        <a href="/#/admin/login" className={styles.loginLink}>
+          Login
+        </a>
+        {/* <button onClick={() => navigate("/admin/login")}>
           Admin
-        </button>
+        </button> */}
       </div>
+      <Menu />
     </div>
   )
+
 }
