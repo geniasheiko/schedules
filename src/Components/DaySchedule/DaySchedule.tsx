@@ -39,20 +39,25 @@ export const DaySchedule = ({
 
   return (
     <div className={styles.daySchedule}>
-      <h2>
-        {dayName}
+      <div className={styles.dateScheduleHeader}>
+        <h2>
+          {dayName}        
+        </h2>
         {dayDate && (
-          <span style={{ marginLeft: 8, fontWeight: 400, fontSize: "1rem" }}>
-            (
-            {new Date(dayDate).toLocaleDateString("uk-UA", {
-              day: "2-digit",
-              month: "2-digit",
-              year: "numeric",
-            })}
-            )
+          <span className={styles.dateSchedule}>
+            
+            {(() => {
+              const date = new Date(dayDate);
+              const formatted = date.toLocaleDateString("uk-UA", {
+                day: "2-digit",
+                month: "long",
+              }) + ` ${date.getFullYear()}`;
+              return formatted;
+            })()}
+            
           </span>
         )}
-      </h2>
+      </div>
 
       {Object.entries(dayLocations).map(([location, times]) => (
         <div key={location} className={styles.locationBlock}>
@@ -70,21 +75,18 @@ export const DaySchedule = ({
                           readOnly
                           value={current.booked_person_name ?? "-"}
                           className={styles.readonlyInput}
-                        />
-                        {localStorage.getItem(current.id) === current.booked_person_name && (
-                          <ActionButton
-                            label="Видалити"
-                            onClick={() => handleDelete(current.id)}
-                            disabled={loading}
-                            color="primary"
-                          />
-                        )}
+                        />                       
+                        <ActionButton
+                          label="Видалити"
+                          onClick={() => handleDelete(current.id)}
+                          disabled={loading}
+                          color="primary"
+                        />                       
                       </div>
                     ) : (
                       <div key={current.id} className={styles.slotCell}>
                         <input
                           type="text"
-                          placeholder="Ім'я"
                           value={inputs[current.id] || ""}
                           onChange={(e) => handleInputChange(current.id, e.target.value)}
                           disabled={loading}

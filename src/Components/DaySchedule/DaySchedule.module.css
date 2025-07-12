@@ -1,17 +1,32 @@
 .daySchedule {
   width: 100%;
-  border: 1px solid #43a047;
-  background: #f1f8e9;
+  border: 1px solid #e7e6e4;
+  background: #fff;
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
   box-shadow: 0 2px 8px 0 #a5d6a733;
 }
 
+.daySchedule .dateScheduleHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: -20px;
+  padding: 0 20px;
+  background-color: #f0f0ef;
+}
+
 .daySchedule h2 {
   border: none;
-  margin: 0;
-  padding: 0;
+  color: #4d4947;
+}
+
+.daySchedule .dateSchedule {
+  margin-left: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #74706d;
 }
 
 .locationBlock {
@@ -19,8 +34,8 @@
 }
 
 .locationBlock > h3 {
-  color: #2e7d32;
-  margin-bottom: 30px;
+  color: #4d4947;
+  margin-bottom: 20px;
   font-size: 1.2rem;
   padding-bottom: 0.3rem;
 }
@@ -30,12 +45,12 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 20px;
 }
 
 .timeCell {
   margin-right: 10px;
-  color: #388e3c;
+  color: #4d4947;
   font-weight: bold;
 }
 
@@ -57,23 +72,23 @@
   max-width: 100%;
   width: calc(100% - 40px);
   padding: 6px 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #f0f0ef;
   border-radius: 6px;
   font-size: 0.9rem;
   transition: border-color 0.3s ease;
+  background-color: #fff;
 }
 
 .slotCell input[type="text"]:focus {
-  border-color: #43a047;
+  border-color: #e7e6e4;
   outline: none;
-  background-color: #e8f5e9;
 }
 
 .readonlyInput {
-  width: 100%;
   max-width: 100%;
-  background-color: #eee;
-  border: 1px solid #ccc;
+  width: calc(100% - 40px);
+  background-color: #e7e6e4;
+  border: 1px solid #d5d4d2;
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 0.9rem;

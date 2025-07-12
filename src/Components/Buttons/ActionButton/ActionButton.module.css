@@ -9,14 +9,15 @@
   border: none;
   border-radius: unset;
   padding: 0;
+  background-color: transparent;
 }
 
 .primary {
-  background-image: url('../../../assets/trash.svg');
+  background-image: url('../../../assets/trash-red.svg');
 }
 
 .danger {
-  background-image: url('../../../assets/pen-to-square.svg');
+  background-image: url('../../../assets/square-check-green.svg');
 }
 
 .button:disabled {

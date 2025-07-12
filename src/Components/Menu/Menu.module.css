@@ -1,14 +1,14 @@
 .menu {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 10px;
     padding: 0 15px 10px;
-    background: #f7fafd;
+    background: #fff;
 }
 
 .link {
     margin-right: 10px;
     margin-top: 10px;
+    color: #386195;
 }
 
 .link:not(:last-child):after{

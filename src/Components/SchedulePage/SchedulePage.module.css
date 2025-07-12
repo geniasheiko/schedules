@@ -1,6 +1,6 @@
 .centerWrapper {
   padding-top: 2rem;
-  background: #e8f5e9; 
+  background: #F8F8F7; 
   overflow-x: auto;
 }
 
@@ -19,6 +19,6 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    padding: 20px;
+    padding: 5px 20px 20px;
   }
 }

@@ -2,11 +2,11 @@
   padding: 8px 20px;
   margin: 0 auto;
   font-size: 16px;
-  background: #f0f4ff;
-  border: 1px solid #02596d;
+  background: #fff;
+  border: 1px solid #f0f0ef;
   border-radius: 6px;
   cursor: pointer;
-  color: #189540;
+  color: #386195;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -14,7 +14,8 @@
 }
 
 .toggleButton:hover {
-  background: #e0eaff;
+  background: #f3f6fb;
+  border-color: #e7e6e4;
 }
 
 .arrow {
