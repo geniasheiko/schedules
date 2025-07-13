@@ -1,5 +1,7 @@
 .centerWrapper {
-  padding-top: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px 20px;
   background: #F8F8F7; 
   overflow-x: auto;
 }

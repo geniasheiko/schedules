@@ -8,7 +8,6 @@ export const ListsPage = () => {
         </header>
         <h2 className={styles.subtitle}>Список по групах</h2>
         <h2 className={styles.subtitle}>Список вісників, схвалених для служіння зі стендом</h2>
-        <h2 className={styles.subtitle}>Піонери</h2>
     </div>
     )
 }

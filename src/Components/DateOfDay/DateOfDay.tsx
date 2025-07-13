@@ -1,3 +1,4 @@
+import styles from "./DateOfDay.module.css";
 
 type DateOfDayPropsType = {
     selectedWeek: string | null;
@@ -6,7 +7,7 @@ type DateOfDayPropsType = {
 export const DateOfDate = ({ selectedWeek }: DateOfDayPropsType) => {
     return (
     <>
-        <p>
+        <h1 className={styles.headerTitle}>
             Тиждень від {" "}
             {selectedWeek &&
                 new Date(selectedWeek).toLocaleDateString("uk-UA", {
@@ -14,7 +15,7 @@ export const DateOfDate = ({ selectedWeek }: DateOfDayPropsType) => {
                     month: "long",
                     year: "numeric",
                 })}
-        </p>
+        </h1>
     </>
     )
 }

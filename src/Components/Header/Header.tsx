@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.topLinks}>
-        <a href="/#/admin/login" className={styles.loginLink}>
+        <a href="/schedules/#/admin/login" className={styles.loginLink}>
           Login
         </a>
         {/* <button onClick={() => navigate("/admin/login")}>

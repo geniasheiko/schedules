@@ -172,6 +172,9 @@ h2 {
     .weeksItem {
         width: calc(100% - 20px);
     }
+    .weeksItem:nth-child(odd){
+        padding-right: 0;
+    }
     .headerTitle {
         flex-direction: column;
     }
@@ -179,8 +182,9 @@ h2 {
         font-size: 30px;
         margin-bottom: 0;
     }
-    .title .subtitle {
-        font-size: 30px;
+    .headerTitle .subtitle {
+        font-size: 28px;
+	    margin-top: 10px;
     }
     .footerItem.service .footerListItem{
         display: flex;

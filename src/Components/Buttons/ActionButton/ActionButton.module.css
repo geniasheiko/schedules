@@ -13,11 +13,11 @@
 }
 
 .primary {
-  background-image: url('../../../assets/trash-red.svg');
+  background-image: url('../../../assets/trash-jw.svg');
 }
 
 .danger {
-  background-image: url('../../../assets/square-check-green.svg');
+  background-image: url('../../../assets/check-jw.svg');
 }
 
 .button:disabled {
