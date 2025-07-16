@@ -1,64 +1,96 @@
 .daySchedule {
-  border: 1px solid #43a047;
-  background: #f1f8e9;
-  padding: 1rem;
+  width: 100%;
+  border: 1px solid #e7e6e4;
+  background: #fff;
+  padding: 20px;
   border-radius: 12px;
-  margin-bottom: 1rem;
+  margin-bottom: 30px;
   box-shadow: 0 2px 8px 0 #a5d6a733;
 }
 
+.daySchedule .dateScheduleHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: -20px -20px -10px;
+  padding: 0 20px;
+  background-color: #f0f0ef;
+}
+
+.daySchedule h2 {
+  border: none;
+  color: #4d4947;
+}
+
+.daySchedule .dateSchedule {
+  margin-left: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #74706d;
+}
+
 .locationBlock {
-  margin-bottom: 1.5rem;
+  margin-top: 30px;
 }
 
 .locationBlock > h3 {
-  color: #2e7d32;
-  margin-bottom: 0.75rem;
+  color: #4d4947;
+  margin-bottom: 20px;
+  margin-top: ;
   font-size: 1.2rem;
-  border-bottom: 1px solid #43a047;
   padding-bottom: 0.3rem;
 }
 
 .timeRow {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 20px;
 }
 
 .timeCell {
-  width: 70px;
-  color: #388e3c;
+  margin-right: 10px;
+  color: #4d4947;
   font-weight: bold;
-  flex-shrink: 0;
+}
+
+.slotsCellWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .slotCell {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex: 1; /* чтобы занять оставшееся пространство */
+  justify-content: space-between;
+  width: calc(50% - 10px);
 }
 
 .slotCell input[type="text"] {
-  flex: 1;
+  max-width: 100%;
+  width: calc(100% - 40px);
   padding: 6px 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #f0f0ef;
   border-radius: 6px;
   font-size: 0.9rem;
   transition: border-color 0.3s ease;
+  background-color: #fff;
+  color: #4d4947;
 }
 
 .slotCell input[type="text"]:focus {
-  border-color: #43a047;
+  border-color: #e7e6e4;
   outline: none;
-  background-color: #e8f5e9;
 }
 
 .readonlyInput {
-  flex: 1;
-  background-color: #eee;
-  border: 1px solid #ccc;
+  max-width: 100%;
+  width: calc(100% - 40px);
+  background-color: #e7e6e4;
+  border: 1px solid #d5d4d2;
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 0.9rem;
@@ -68,4 +100,18 @@
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+
+  .timeRow {
+    align-items: start;
+    gap: unset;
+  }
+
+  .slotCell {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
 }

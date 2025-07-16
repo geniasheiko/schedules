@@ -1,0 +1,45 @@
+/* reset styles */
+body{
+    display: unset;
+    margin: unset;
+    min-width: unset;
+    min-height: unset;
+    background: unset;
+}
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}
+h3 {
+    margin: 0;
+    line-height: 1;
+}
+/* end reset styles */
+
+h2 {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title .subtitle {
+    font-size: 30px;
+}
+
+@media(max-width: 768px){
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+}
