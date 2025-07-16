@@ -5,6 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { supabase } from "../../utils/supabase/supabase";
 import { translateSupabaseError } from "../../utils/translateSupabaseError";
+import { UniversalButton } from "../../Components/Buttons/UniversalButton/UniversalButton";
 
 
 const loginSchema = z.object({
@@ -96,7 +97,7 @@ export const LoginPage = () => {
           Запам’ятати мене
         </label>
 
-        <button type="submit">Увійти</button>
+        <UniversalButton type="submit">Увійти</UniversalButton>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
     </div>

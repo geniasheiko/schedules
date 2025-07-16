@@ -8,7 +8,8 @@ import { authApi } from '../features/auth/supabaseAuth';
 export const store = configureStore({
     reducer: {
         [scheduleApi.reducerPath]: scheduleApi.reducer,
-        [authApi.reducerPath]: authApi.reducer
+        [authApi.reducerPath]: authApi.reducer,
+       
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(scheduleApi.middleware).concat(authApi.middleware),
