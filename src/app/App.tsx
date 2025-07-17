@@ -2,6 +2,7 @@ import { HashRouter } from "react-router-dom";
 import { Header } from "../Components/Header/Header";
 import { Routing } from "../common/Routing/Routing";
 
+
 export const App = () => {
   return (
     <HashRouter>
@@ -10,6 +11,7 @@ export const App = () => {
     </HashRouter>
   )
 }
+
 
 export default App;
 

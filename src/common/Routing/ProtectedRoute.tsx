@@ -1,9 +1,10 @@
 import { useEffect, useState, type ReactNode } from "react"
 import { useNavigate } from "react-router-dom"
-import { supabase } from "../utils/supabase/supabase"
+import { supabase } from "../../utils/supabase/supabase";
+
 
 export type ProtactedRouteProps = {
-  children: ReactNode;
+    children: ReactNode;
 };
 
 export const ProtectedRoute = ({ children }: ProtactedRouteProps) => {
@@ -12,8 +13,8 @@ export const ProtectedRoute = ({ children }: ProtactedRouteProps) => {
     const [authorized, setAuthorized] = useState(false)
 
     useEffect(() => {
-        supabase.auth.getUser().then(({data:{user}}) => {
-            if(user) {
+        supabase.auth.getUser().then(({ data: { user } }) => {
+            if (user) {
                 setAuthorized(true)
             } else {
                 navigate("/admin/login")
@@ -22,7 +23,7 @@ export const ProtectedRoute = ({ children }: ProtactedRouteProps) => {
         })
     }, [])
 
-    if(loading) return <p>Завантаження</p>
+    if (loading) return <p>Завантаження</p>
 
-     return authorized ? <>{children}</> : null;
+    return authorized ? <>{children}</> : null;
 }
