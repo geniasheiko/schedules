@@ -17,10 +17,10 @@ export const DashboardPage = () => {
         error: addError } = useAddNewWeek()
 
       const { restore, 
-        isLoading: isRestoring, 
+        isLoading: _isRestoring, 
         isError: isRestoreError, 
         error: restoreError, 
-        successMessage: restoreSuccess } = useRestoreWeekFromBackup();
+        successMessage: _restoreSuccess } = useRestoreWeekFromBackup();
 
     const isLoading = isDeleting || isAdding
 
