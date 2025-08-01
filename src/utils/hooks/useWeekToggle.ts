@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { ScheduleSlot } from "../../../types/schedule";
+import type { ScheduleSlot } from "../../types/schedule";
 // кастомный хук для управления выбором недели
 export const useWeekToggle = (schedules: ScheduleSlot[]) => {
   //Создаёт массив уникальных дат начала недели из всех расписаний

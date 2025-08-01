@@ -1,13 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { ScheduleSlot } from "../types/schedule";
 
-export const scheduleApi = createApi ({
+
+export const scheduleApi = createApi({
   reducerPath: 'scheduleApi',
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_SUPABASE_URL + '/rest/v1',
     prepareHeaders: (headers) => {
       headers.set('apikey', import.meta.env.VITE_SUPABASE_ANON_KEY);//!!
-     // headers.set('Authorization', 'Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}');//!!
+      // headers.set('Authorization', 'Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}');//!!
       return headers;
     },
   }),
@@ -38,6 +39,35 @@ export const scheduleApi = createApi ({
       }),
       invalidatesTags: ['Schedule'],
     }),
+    deleteOldestWeek: builder.mutation<void, void>({
+      query: () => ({
+        url: '/rpc/delete_oldest_week',
+        method: 'POST',
+      }),
+      invalidatesTags:['Schedule']
+    }),
+    addNewWeek: builder.mutation<void, void>({
+      query: () => ({
+        url: '/rpc/add_new_week',
+        method: 'POST',
+      }),
+      invalidatesTags:['Schedule']
+    }),
+    restoreWeekFromBackup: builder.mutation<void, void>({
+      query: () => ({
+        url: '/rpc/restore_week_from_backup',
+        method: 'POST',
+      }),
+      invalidatesTags: ['Schedule'],
+    })
+
+    //     shiftOldestWeek: builder.mutation<void, void>({
+    //   query: () => ({
+    //     url: '/rpc/shift_oldest_week',
+    //     method: 'POST',
+    //   }),
+    //   invalidatesTags:['Schedule']
+    // }),
   }),
 });
 
@@ -45,4 +75,8 @@ export const {
   useGetSchedulesQuery,
   useBookSlotMutation,
   useDeleteSlotMutation,
+  useDeleteOldestWeekMutation,
+  useAddNewWeekMutation,
+  useRestoreWeekFromBackupMutation
+  //useShiftOldestWeekMutation 
 } = scheduleApi;

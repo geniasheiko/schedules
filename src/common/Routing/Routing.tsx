@@ -4,9 +4,9 @@ import { LifeMinistryPage } from "../../pages/LifeMinistryPage/LifeMinistryPage"
 import { PublicTalkWatchtowerPage } from "../../pages/PublicTalkWatchtowerPage/PublicTalkWatchtowerPage";
 import { ListsPage } from "../../pages/ListsPage/ListsPage";
 import { MeetingsFieldServicePage } from "../../pages/MeetingsFieldServicePage/MeetingsFieldServicePage";
-import { DashboardPage } from "../../pages/LifeMinistryPage/DashboardPage/DashboardPage";
 import { LoginPage } from "../../pages/LoginPage/LoginPage";
 import { ProtectedRoute } from "./ProtectedRoute";
+import { DashboardPage } from "../../pages/DashboardPage/DashboardPage";
 
 
 export const Routing = () => {
