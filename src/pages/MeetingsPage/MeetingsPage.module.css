@@ -73,26 +73,58 @@ h2 {
 }
 
 .weeksContainer {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
 }
 
 .weeksItem {
-    display: flex;
-    flex-direction: column;
-    width: calc(50% - 40px);
-    margin-bottom: 40px;
-}
-
-.weeksItem:nth-child(odd){
-    padding-right: 40px;
-    border-right: 1px dashed #000;
+    
 }
 
 .weekContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.lifeMinistryWrapper {
+    width: calc(50% - 20px);
+}
+
+.watchtowerPublicTalkWrapper {
+    width: calc(50% - 40px);
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.watchtowerPublicTalkTitle {
+    margin: 0 0 20px;
+}
+
+.lifeMinistryTitle {
+    margin: 15px 0;
+}
+
+.watchtowerPublicTalkTitle,
+.lifeMinistryTitle {
+    font-size: 21px;
+}
+
+.watchtowerText,
+.publicTalkText {
+    font-weight: 500;
+}
+
+.publicTalkContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.lifeMinistryContent {
     padding-left: 15px;
 }
+
 .topBlock {
     margin-bottom: 10px;
 }
@@ -117,7 +149,9 @@ h2 {
 
 .treasuresTitle,
 .ministryTitle,
-.lifeTitle {
+.lifeTitle,
+.publicTalkTitle,
+.watchtowerTitle {
     display: flex;
     align-items: end;
     padding-bottom: 10px;
@@ -126,7 +160,9 @@ h2 {
 
 .treasuresImg,
 .ministryImg,
-.lifeImg {
+.lifeImg,
+.publicTalkImg,
+.watchtowerImg {
     width: 40px;
     height: 40px;
     margin-right: 10px;
@@ -171,9 +207,6 @@ h2 {
     }
     .weeksItem {
         width: calc(100% - 20px);
-    }
-    .weeksItem:nth-child(odd){
-        padding-right: 0;
     }
     .headerTitle {
         flex-direction: column;

@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { SchedulePage } from "../../Components/SchedulePage/SchedulePage";
-import { LifeMinistryPage } from "../../pages/LifeMinistryPage/LifeMinistryPage";
-import { PublicTalkWatchtowerPage } from "../../pages/PublicTalkWatchtowerPage/PublicTalkWatchtowerPage";
+import { MeetingsPage } from "../../pages/MeetingsPage/MeetingsPage";
 import { ListsPage } from "../../pages/ListsPage/ListsPage";
 import { MeetingsFieldServicePage } from "../../pages/MeetingsFieldServicePage/MeetingsFieldServicePage";
 import { LoginPage } from "../../pages/LoginPage/LoginPage";
@@ -13,8 +12,7 @@ export const Routing = () => {
     return (
         <Routes>
             <Route path="/" element={<SchedulePage />} />
-            <Route path="/life-and-ministry" element={<LifeMinistryPage />} />
-            <Route path="/public-talk-watchtower" element={<PublicTalkWatchtowerPage />} />
+            <Route path="/meetings" element={<MeetingsPage />} />
             <Route path="/meetings-for-field-service" element={<MeetingsFieldServicePage />} />
             <Route path="/lists" element={<ListsPage />} />
             <Route path="/admin/login" element={<LoginPage />} />
