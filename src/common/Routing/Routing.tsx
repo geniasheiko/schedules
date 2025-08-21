@@ -13,7 +13,7 @@ export const Routing = () => {
         <Routes>
             <Route path="/" element={<SchedulePage />} />
             <Route path="/meetings" element={<MeetingsPage />} />
-            <Route path="/meetings-for-field-service" element={<MeetingsFieldServicePage />} />
+            <Route path="/meetings-for-field-service" element={<MeetingsFieldServicePage isAdmin={true} />} />
             <Route path="/lists" element={<ListsPage />} />
             <Route path="/admin/login" element={<LoginPage />} />
             <Route

@@ -1,8 +1,8 @@
 import styles from "./DaySchedule.module.css";
-import { ActionButton } from "../Buttons/ActionButton/ActionButton";
 import type { ScheduleSlot } from "../../types/schedule";
 import { scheduleTimes } from "../../constatns/scheduleTimes";
 import { useDayScheduleHandlers } from "./useDayScheduleHandlers";
+import { UniversalButton } from "../Buttons/UniversalButton/UniversalButton";
 
 type DayScheduleProps = {
   dayName: string;
@@ -76,12 +76,13 @@ export const DaySchedule = ({
                           value={current.booked_person_name ?? "-"}
                           className={styles.readonlyInput}
                         />                       
-                        <ActionButton
-                          label="Видалити"
+                        <UniversalButton
+                         label="Видалити"
                           onClick={() => handleDelete(current.id)}
                           disabled={loading}
                           color="primary"
-                        />                       
+                          type="button"
+                        />                     
                       </div>
                     ) : (
                       <div key={current.id} className={styles.slotCell}>
@@ -92,7 +93,7 @@ export const DaySchedule = ({
                           disabled={loading}
                           className={styles.input}
                         />
-                        <ActionButton
+                        <UniversalButton
                           label="Записатись"
                           onClick={() => handleBook(current.id, current)}
                           disabled={loading}

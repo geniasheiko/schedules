@@ -4,19 +4,21 @@ import type { ReactNode } from "react";
 type UniversalButtonPropsType = {
   onClick?: () => void
   disabled?: boolean
-  type?: "button" | "submit" | "reset";
+  type?: "button" | "submit" | "reset"
   className?: string
-  children: ReactNode
+  children?: ReactNode
+  color?: "primary" | "danger"
+  label?: string
 }
 
-export const UniversalButton = ({onClick, disabled, type, className, children}: UniversalButtonPropsType) => {
+export const UniversalButton = ({onClick, disabled, type, className, children, color, label}: UniversalButtonPropsType) => {
   return (
     <button
       onClick={onClick}
       type={type}
       disabled={disabled}
       className={className}>
-       {children}
+       {label ?? children}
     </button>
 )
 }
