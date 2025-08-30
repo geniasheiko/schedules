@@ -1,65 +1,73 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { ScheduleSlot } from "../types/schedule";
-
+import { supabase } from "../utils/supabase/supabase";
 
 export const scheduleApi = createApi({
-  reducerPath: 'scheduleApi',
+  reducerPath: "scheduleApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_SUPABASE_URL + '/rest/v1',
+    baseUrl: import.meta.env.VITE_SUPABASE_URL + "/rest/v1",
     prepareHeaders: (headers) => {
-      headers.set('apikey', import.meta.env.VITE_SUPABASE_ANON_KEY);//!!
-      // headers.set('Authorization', 'Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}');//!!
+      // headers.set('apikey', import.meta.env.VITE_SUPABASE_ANON_KEY);//!!
+      headers.set(
+        "Authorization",
+        "Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}"
+      ); //!!
+      //    const token = supabase.auth.getSession().data.session?.access_token;
+      // if (token) {
+      //   headers.set('Authorization', `Bearer ${token}`);
+      // }
+      // headers.set('apikey', import.meta.env.VITE_SUPABASE_ANON_KEY);
       return headers;
     },
   }),
-  tagTypes: ['Schedule'],
+  tagTypes: ["Schedule"],
   endpoints: (builder) => ({
     getSchedules: builder.query<ScheduleSlot[], void>({
       query: () => ({
-        url: 'schedules',
-        params: { select: '*' },
+        url: "schedules",
+        params: { select: "*" },
       }),
-      providesTags: ['Schedule'],
+      providesTags: ["Schedule"],
     }),
     bookSlot: builder.mutation<void, { id: string; name: string }>({
       query: ({ id, name }) => ({
         url: `schedules?id=eq.${id}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: { booked_person_name: name, is_booked: true },
-        headers: { 'Content-Type': 'application/json' },
+        headers: { "Content-Type": "application/json" },
       }),
-      invalidatesTags: ['Schedule'],
+      invalidatesTags: ["Schedule"],
     }),
     deleteSlot: builder.mutation<void, { id: string }>({
       query: ({ id }) => ({
         url: `schedules?id=eq.${id}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: { booked_person_name: null, is_booked: false },
-        headers: { 'Content-Type': 'application/json' },
+        headers: { "Content-Type": "application/json" },
       }),
-      invalidatesTags: ['Schedule'],
+      invalidatesTags: ["Schedule"],
     }),
     deleteOldestWeek: builder.mutation<void, void>({
       query: () => ({
-        url: '/rpc/delete_oldest_week',
-        method: 'POST',
+        url: "/rpc/delete_oldest_week",
+        method: "POST",
       }),
-      invalidatesTags:['Schedule']
+      invalidatesTags: ["Schedule"],
     }),
     addNewWeek: builder.mutation<void, void>({
       query: () => ({
-        url: '/rpc/add_new_week',
-        method: 'POST',
+        url: "/rpc/add_new_week",
+        method: "POST",
       }),
-      invalidatesTags:['Schedule']
+      invalidatesTags: ["Schedule"],
     }),
     restoreWeekFromBackup: builder.mutation<void, void>({
       query: () => ({
-        url: '/rpc/restore_week_from_backup',
-        method: 'POST',
+        url: "/rpc/restore_week_from_backup",
+        method: "POST",
       }),
-      invalidatesTags: ['Schedule'],
-    })
+      invalidatesTags: ["Schedule"],
+    }),
 
     //     shiftOldestWeek: builder.mutation<void, void>({
     //   query: () => ({
@@ -77,6 +85,6 @@ export const {
   useDeleteSlotMutation,
   useDeleteOldestWeekMutation,
   useAddNewWeekMutation,
-  useRestoreWeekFromBackupMutation
-  //useShiftOldestWeekMutation 
+  useRestoreWeekFromBackupMutation,
+  //useShiftOldestWeekMutation
 } = scheduleApi;

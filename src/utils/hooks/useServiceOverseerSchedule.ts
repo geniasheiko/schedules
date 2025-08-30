@@ -50,22 +50,5 @@ export const useServiceOverseerSchedule = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //     const fetchSchedule = async() => {
-  //         setLoading(true);
-  //         const {data, error} = await supabase
-  //         .from("service_overseer_schedule")
-  //         .select("*")
-  //         .order("date", {ascending:true})
-
-  //         if(error) {
-  //             setError(error);
-  //         } else {
-  //             setSchedule(data || []);
-  //         }
-  //         setLoading(false);
-  //     };
-  //     fetchSchedule();
-  // }, []);
   return { schedule, loading, error };
 };
