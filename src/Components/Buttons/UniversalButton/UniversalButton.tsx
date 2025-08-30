@@ -1,32 +1,34 @@
 import type { ReactNode } from "react";
 
-
 type UniversalButtonPropsType = {
-  onClick?: () => void
-  disabled?: boolean
-  type?: "button" | "submit" | "reset"
-  className?: string
-  children?: ReactNode
-  color?: "primary" | "danger"
-  label?: string
-}
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
+  className?: string;
+  children?: ReactNode;
+  color?: "primary" | "danger";
+  label?: string;
+};
 
-export const UniversalButton = ({onClick, disabled, type, className, children, color, label}: UniversalButtonPropsType) => {
+export const UniversalButton = ({
+  onClick,
+  disabled,
+  type,
+  className,
+  children,
+  label,
+}: UniversalButtonPropsType) => {
   return (
     <button
       onClick={onClick}
       type={type}
       disabled={disabled}
-      className={className}>
-       {label ?? children}
+      className={className}
+    >
+      {label ?? children}
     </button>
-)
-}
-
-
-
-
-
+  );
+};
 
 // export const LogoutButton = () => {
 //   const [logout] = useLogoutMutation();

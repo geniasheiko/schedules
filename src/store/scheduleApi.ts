@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { ScheduleSlot } from "../types/schedule";
-import { supabase } from "../utils/supabase/supabase";
 
 export const scheduleApi = createApi({
   reducerPath: "scheduleApi",
