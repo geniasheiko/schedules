@@ -2,6 +2,7 @@ import { HashRouter } from "react-router-dom";
 import { Header } from "../Components/Header/Header";
 import { Routing } from "../common/Routing/Routing";
 import { useGetCurrentUserQuery } from "../features/auth/supabaseAuth";
+import { TestSupabase } from "./TestSupabase";
 
 export const AuthBootstrap = () => {
   useGetCurrentUserQuery(); //активирует подписку
@@ -13,6 +14,7 @@ export const App = () => {
     <HashRouter>
       <AuthBootstrap />
       <Header />
+      <TestSupabase />
       <Routing />
     </HashRouter>
   );

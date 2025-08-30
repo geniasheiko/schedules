@@ -6,11 +6,11 @@ export const scheduleApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_SUPABASE_URL + "/rest/v1",
     prepareHeaders: (headers) => {
-      // headers.set('apikey', import.meta.env.VITE_SUPABASE_ANON_KEY);//!!
-      headers.set(
-        "Authorization",
-        "Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}"
-      ); //!!
+      headers.set("apikey", import.meta.env.VITE_SUPABASE_ANON_KEY); //!!
+      // headers.set(
+      //   "Authorization",
+      //   "Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}"
+      // ); //!!
       //    const token = supabase.auth.getSession().data.session?.access_token;
       // if (token) {
       //   headers.set('Authorization', `Bearer ${token}`);
