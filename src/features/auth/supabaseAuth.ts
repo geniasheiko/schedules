@@ -51,7 +51,8 @@ export const authApi = createApi({
               .from("admins")
               .select("id")
               .eq("id", data.user.id)
-              .single();
+              // .single();
+              .maybeSingle();
             isAdmin = !!adminData;
           }
 
@@ -164,7 +165,8 @@ export const authApi = createApi({
               .from("admins")
               .select("id")
               .eq("id", user.id)
-              .single();
+              // .single();
+              .maybeSingle();
 
             const isAdmin = !!adminData;
             return { data: { user, isAdmin, error: null } };
@@ -198,7 +200,8 @@ export const authApi = createApi({
                   .from("admins")
                   .select("id")
                   .eq("id", session.user.id)
-                  .single();
+                  // .single();
+                  .maybeSingle();
                 isAdmin = !!adminData;
               }
 

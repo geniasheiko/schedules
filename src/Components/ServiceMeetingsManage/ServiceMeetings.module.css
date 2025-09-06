@@ -1,0 +1,43 @@
+.meetingsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 20px 20px;
+  background: #f8f8f7;
+}
+
+.listSection {
+  display: flex;
+  width: 500px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h3 {
+}
+
+.scheduleItem {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.itemButtons {
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputField {
+  max-width: 100%;
+  width: calc(100% - 40px);
+  background-color: #e7e6e4;
+  border: 1px solid #d5d4d2;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  color: #555;
+}

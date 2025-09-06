@@ -67,14 +67,6 @@ export const scheduleApi = createApi({
       }),
       invalidatesTags: ["Schedule"],
     }),
-
-    //     shiftOldestWeek: builder.mutation<void, void>({
-    //   query: () => ({
-    //     url: '/rpc/shift_oldest_week',
-    //     method: 'POST',
-    //   }),
-    //   invalidatesTags:['Schedule']
-    // }),
   }),
 });
 

@@ -14,7 +14,7 @@ export const App = () => {
     <HashRouter>
       <AuthBootstrap />
       <Header />
-      <TestSupabase />
+      {/* <TestSupabase /> */}
       <Routing />
     </HashRouter>
   );

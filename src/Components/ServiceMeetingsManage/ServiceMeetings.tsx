@@ -3,6 +3,7 @@ import { useManageServiceOverseerSchedule } from "../../utils/hooks/useManageSer
 import { toast } from "react-toastify";
 import { UniversalButton } from "../Buttons/UniversalButton/UniversalButton";
 import { useServiceOverseerSchedule } from "../../utils/hooks/useServiceOverseerSchedule";
+import styles from "./ServiceMeetings.module.css";
 
 export const ServiceMeetings = () => {
   const { addEntry, deleteEntry } = useManageServiceOverseerSchedule();
@@ -34,28 +35,33 @@ export const ServiceMeetings = () => {
     }
   };
   return (
-    <div>
-      {loading && <p>Загрузка...</p>}
-      {error && <p>Ошибка: {error.message}</p>}
-
-      <ul>
-        {schedule.map((item) => (
-          <li key={item.id}>
-            {item.date} ({item.day_of_week}) — {item.adres}, {item.speaker}
-            <UniversalButton onClick={() => handleDelete(item.id)}>
-              Удалить
-            </UniversalButton>
-          </li>
-        ))}
-      </ul>
-
-      <div>
+    <div className={styles.meetingsContainer}>
+      <h3>Зустрічі для служіння</h3>
+      <div className={styles.listSection}>
+        {loading && <p>Загрузка...</p>}
+        {error && <p>Ошибка: {error.message}</p>}
+        <ul>
+          {schedule.map((item) => (
+            <li key={item.id} className={styles.scheduleItem}>
+              {item.date} ({item.day_of_week}) — {item.adres}, {item.speaker}
+              <div className={styles.itemButtons}>
+                <UniversalButton onClick={() => handleDelete(item.id)}>
+                  Удалить
+                </UniversalButton>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className={styles.inputGroup}>
         <input
+          className={styles.inputField}
           placeholder="Дата"
           value={formData.date}
           onChange={(e) => setFormData({ ...formData, date: e.target.value })}
         />
         <input
+          className={styles.inputField}
           placeholder="День тижня"
           value={formData.day_of_week}
           onChange={(e) =>
@@ -63,11 +69,13 @@ export const ServiceMeetings = () => {
           }
         />
         <input
+          className={styles.inputField}
           placeholder="Адреса"
           value={formData.adres}
           onChange={(e) => setFormData({ ...formData, adres: e.target.value })}
         />
         <input
+          className={styles.inputField}
           placeholder="Відповідальний"
           value={formData.speaker}
           onChange={(e) =>

@@ -36,7 +36,7 @@
 .locationBlock > h3 {
   color: #4d4947;
   margin-bottom: 20px;
-  margin-top: ;
+  /* margin-top: ; */
   font-size: 1.2rem;
   padding-bottom: 0.3rem;
 }
@@ -103,7 +103,6 @@ button:disabled {
 }
 
 @media (max-width: 768px) {
-
   .timeRow {
     align-items: start;
     gap: unset;
@@ -113,5 +112,4 @@ button:disabled {
     width: 100%;
     margin-bottom: 10px;
   }
-
 }
