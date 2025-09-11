@@ -22,11 +22,6 @@ export const LoginPage = () => {
 
   const navigate = useNavigate();
 
-  // const rememberedEmail =
-  //   (typeof window !== "undefined" &&
-  //     localStorage.getItem("rememberedEmail")) ||
-  //   "";
-
   const {
     register,
     handleSubmit,

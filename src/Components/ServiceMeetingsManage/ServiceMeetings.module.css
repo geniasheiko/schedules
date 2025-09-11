@@ -12,10 +12,15 @@
   width: 500px;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 h3 {
 }
+
+/* ul {
+  align-items: center;
+} */
 
 .scheduleItem {
   display: flex;
@@ -24,6 +29,7 @@ h3 {
 }
 
 .itemButtons {
+  justify-content: space-between;
 }
 
 .inputGroup {

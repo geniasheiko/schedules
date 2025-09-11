@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store/store";
+import { useGetCurrentUserQuery } from "../../features/auth/supabaseAuth";
 
 export const Menu = () => {
-  const { isAuth } = useSelector((state: RootState) => state.auth);
+  // const { isAuth } = useSelector((state: RootState) => state.auth);
+  const { data, isLoading } = useGetCurrentUserQuery();
 
   return (
     <nav className={styles.menu}>
@@ -20,7 +22,10 @@ export const Menu = () => {
       <Link to="/meetings-for-field-service" className={styles.link}>
         Зустрічі для служіння
       </Link>
-      {isAuth && <Link to="/admin/dashboard">Dashboard</Link>}
+      {/* {isAuth && <Link to="/admin/dashboard">Dashboard</Link>} */}
+      {!isLoading && data?.user && data.isAdmin && (
+        <Link to="/admin/dashboard">Dashboard</Link>
+      )}
     </nav>
   );
 };

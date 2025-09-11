@@ -27,6 +27,7 @@ export const authApi = createApi({
     login: builder.mutation<AuthResponseData, LoginData>({
       async queryFn({ email, password }) {
         try {
+          //получаем текущего юзера из Supabase
           const { data, error } = await supabase.auth.signInWithPassword({
             email,
             password,
