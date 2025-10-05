@@ -4,6 +4,7 @@ import { useDeleteOldestWeek } from "../../utils/hooks/useDeleteOldestWeek";
 import { useRestoreWeekFromBackup } from "../../utils/hooks/useRestoreWeekFromBackup";
 import { toast } from "react-toastify";
 import { UniversalButton } from "../Buttons/UniversalButton/UniversalButton";
+import styles from "./ManageWeek.module.css";
 
 export const ManageWeek = () => {
   const {
@@ -76,7 +77,7 @@ export const ManageWeek = () => {
   };
 
   return (
-    <div>
+    <div className={styles.manageWeek}>
       <div>
         <h3>Правила оновленя тижнів</h3>
         <p>
@@ -94,15 +95,17 @@ export const ManageWeek = () => {
           перний з двох наявних тижнів.
         </p>
       </div>
-      <UniversalButton onClick={handleDelete} disabled={isLoading}>
-        Видалити старий тиждень
-      </UniversalButton>
-      <UniversalButton onClick={handleAdd} disabled={isLoading}>
-        Додати новий тиждень
-      </UniversalButton>
-      <UniversalButton onClick={handleRestore} disabled={isLoading}>
-        Поновити видалений тиждень
-      </UniversalButton>
+      <div className={styles.buttonsBlock}>
+        <UniversalButton onClick={handleDelete} disabled={isLoading}>
+          Видалити старий тиждень
+        </UniversalButton>
+        <UniversalButton onClick={handleAdd} disabled={isLoading}>
+          Додати новий тиждень
+        </UniversalButton>
+        <UniversalButton onClick={handleRestore} disabled={isLoading}>
+          Поновити видалений тиждень
+        </UniversalButton>
+      </div>
       {isLoading && (
         <div
           style={{
@@ -114,7 +117,7 @@ export const ManageWeek = () => {
             color: "blue",
           }}
         >
-          Завантаження...
+          {/* Завантаження... */}
         </div>
       )}
     </div>

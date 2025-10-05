@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import styles from "./UniversalButton.module.css"; //!!
 
 type UniversalButtonPropsType = {
   onClick?: () => void;
@@ -13,31 +14,24 @@ type UniversalButtonPropsType = {
 export const UniversalButton = ({
   onClick,
   disabled,
-  type,
+  type = "button",
+  // type,
   className,
   children,
   label,
+  color, //!!
 }: UniversalButtonPropsType) => {
   return (
     <button
       onClick={onClick}
       type={type}
       disabled={disabled}
-      className={className}
+      // className={className}
+      className={`${styles.button} ${color ? styles[color] : ""} ${
+        className ?? ""
+      }`}
     >
       {label ?? children}
     </button>
   );
 };
-
-// export const LogoutButton = () => {
-//   const [logout] = useLogoutMutation();
-//   const navigate = useNavigate();
-
-//   const logoutHandler = async () => {
-//     await logout();
-//     navigate("/");
-//   };
-
-//   return <button onClick={logoutHandler}>Вийти</button>
-// };

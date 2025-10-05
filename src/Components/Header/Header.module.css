@@ -11,8 +11,16 @@
 .topLinks {
   width: 100%;
   text-align: right;
-  background-color: #3C3C3C;
+  background-color: #3c3c3c;
   padding: 5px 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end; /* кнопка справа, но в пределах контейнера */
 }
 
 .loginLink {
@@ -51,14 +59,32 @@
   background: #e0eaff;
 }
 
-@media (max-width: 768px){
+.loginButton {
+  background-color: #13396b;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.loginButton:hover {
+  background-color: #031138;
+}
+
+@media (max-width: 768px) {
   .header {
     align-items: start;
+  }
+  .wrapper {
+    justify-content: flex-start;
   }
 }
 
 @media print {
-    .header{
-        display: none !important;
-    }
+  .header {
+    display: none !important;
+  }
 }

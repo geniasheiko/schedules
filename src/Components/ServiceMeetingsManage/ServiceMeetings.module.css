@@ -30,11 +30,18 @@ h3 {
 
 .itemButtons {
   justify-content: space-between;
+  margin-top: -10px;
 }
 
 .inputGroup {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+  /* overflow-x: auto; */
 }
 
 .inputField {
@@ -46,4 +53,31 @@ h3 {
   padding: 6px 8px;
   font-size: 0.9rem;
   color: #555;
+}
+
+@media (max-width: 768px) {
+  .meetingsContainer {
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
+  .meetingsContainer h3 {
+    font-size: 18px;
+  }
+
+  .scheduleItem {
+    flex-direction: row;
+    /* align-items: flex-start; */
+    gap: 8px;
+  }
+
+  .inputGroup {
+    flex-direction: row;
+  }
+
+  .inputField {
+    flex: 1 1 100%;
+    width: 100%;
+    font-size: 13px;
+  }
 }

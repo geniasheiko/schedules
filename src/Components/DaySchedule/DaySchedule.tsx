@@ -21,7 +21,6 @@ export const DaySchedule = ({
   onDelete,
   loading,
 }: DayScheduleProps) => {
-
   const { inputs, handleInputChange, handleBook, handleDelete } =
     useDayScheduleHandlers(onBook, onDelete, loading);
 
@@ -30,7 +29,8 @@ export const DaySchedule = ({
   const dayLocations = scheduleTimes[dayName] || {};
 
   for (const slot of slots) {
-    if (!groupedByLocation[slot.location]) groupedByLocation[slot.location] = {};
+    if (!groupedByLocation[slot.location])
+      groupedByLocation[slot.location] = {};
     if (!groupedByLocation[slot.location][slot.slot_time]) {
       groupedByLocation[slot.location][slot.slot_time] = [];
     }
@@ -40,21 +40,18 @@ export const DaySchedule = ({
   return (
     <div className={styles.daySchedule}>
       <div className={styles.dateScheduleHeader}>
-        <h2>
-          {dayName}        
-        </h2>
+        <h2>{dayName}</h2>
         {dayDate && (
           <span className={styles.dateSchedule}>
-            
             {(() => {
               const date = new Date(dayDate);
-              const formatted = date.toLocaleDateString("uk-UA", {
-                day: "2-digit",
-                month: "long",
-              }) + ` ${date.getFullYear()}`;
+              const formatted =
+                date.toLocaleDateString("uk-UA", {
+                  day: "2-digit",
+                  month: "long",
+                }) + ` ${date.getFullYear()}`;
               return formatted;
             })()}
-            
           </span>
         )}
       </div>
@@ -63,7 +60,9 @@ export const DaySchedule = ({
         <div key={location} className={styles.locationBlock}>
           <h3>{location}</h3>
           {times.map((time) => {
-            const slotsAtTime = (groupedByLocation[location]?.[time] || []).slice().sort((a, b) => a.id.localeCompare(b.id));
+            const slotsAtTime = (groupedByLocation[location]?.[time] || [])
+              .slice()
+              .sort((a, b) => a.id.localeCompare(b.id));
             return (
               <div key={`${location}_${time}`} className={styles.timeRow}>
                 <div className={styles.timeCell}>{time}</div>
@@ -75,26 +74,28 @@ export const DaySchedule = ({
                           readOnly
                           value={current.booked_person_name ?? "-"}
                           className={styles.readonlyInput}
-                        />                       
+                        />
                         <UniversalButton
-                         label="Видалити"
+                          //  label="Видалити"
                           onClick={() => handleDelete(current.id)}
                           disabled={loading}
                           color="primary"
                           type="button"
-                        />                     
+                        />
                       </div>
                     ) : (
                       <div key={current.id} className={styles.slotCell}>
                         <input
                           type="text"
                           value={inputs[current.id] || ""}
-                          onChange={(e) => handleInputChange(current.id, e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange(current.id, e.target.value)
+                          }
                           disabled={loading}
                           className={styles.input}
                         />
                         <UniversalButton
-                          label="Записатись"
+                          // label="Записатись"
                           onClick={() => handleBook(current.id, current)}
                           disabled={loading}
                           color="danger"
