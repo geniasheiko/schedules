@@ -38,8 +38,8 @@ export const RegisterOneAdmin = () => {
 // import { supabase } from "./utils/supabase/supabase";
 
 // const admins = [
-//   { email: "", password: "" },
-//   { email: "", password: "" },
+//   { email: "", password: "securepassword123" },
+//   { email: "truskavets14001@gmail.com", password: "Cong-14001" },
 // ];
 
 // const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

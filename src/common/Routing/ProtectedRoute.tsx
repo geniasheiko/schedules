@@ -1,6 +1,5 @@
-import { useEffect, useState, type ReactNode } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import { supabase } from "../../utils/supabase/supabase";
+import { type ReactNode } from "react";
+import { Navigate } from "react-router-dom";
 import { useGetCurrentUserQuery } from "../../features/auth/supabaseAuth";
 
 export type ProtactedRouteProps = {

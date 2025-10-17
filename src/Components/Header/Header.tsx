@@ -5,8 +5,6 @@ import {
   useGetCurrentUserQuery,
   useLogoutMutation,
 } from "../../features/auth/supabaseAuth";
-import { UniversalButton } from "../Buttons/UniversalButton/UniversalButton";
-import buttonStyles from "../Buttons/UniversalButton/UniversalButton.module.css";
 
 export const Header = () => {
   const navigate = useNavigate();
