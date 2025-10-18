@@ -13,7 +13,6 @@
     "generate:schedule": "tsx src/generateSchedule.ts"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@hookform/resolvers": "^5.1.1",
     "@reduxjs/toolkit": "^2.8.2",
     "@supabase/supabase-js": "^2.50.0",
