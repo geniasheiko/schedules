@@ -6,13 +6,10 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    "typeRoots": ["./node_modules/@types", "./node_modules"],
-
     /* Bundler mode */
-    "moduleResolution": "node",
-    "preserveSymlinks": true,
+    "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
 
@@ -20,7 +17,6 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
