@@ -1,10 +1,16 @@
+import { useGetMeetingsFieldsServiceQuery } from "../../store/MeetingsFieldsServiceApi";
 import styles from "./MeetingsFieldServicePage.module.css";
-import { useServiceOverseerSchedule } from "../../utils/hooks/useServiceOverseerSchedule";
+// import { useServiceOverseerSchedule } from "../../utils/hooks/useServiceOverseerSchedule";
 
 export const MeetingsFieldServicePage = () => {
-  const { schedule, loading, error } = useServiceOverseerSchedule();
-  if (loading) return <p>Загрузка...</p>;
-  if (error) return <p>Ошибка: {error.message}</p>;
+  // const { schedule, loading, error } = useServiceOverseerSchedule();
+  const {
+    data: schedule = [],
+    isLoading,
+    error,
+  } = useGetMeetingsFieldsServiceQuery();
+  if (isLoading) return <p>Загрузка...</p>;
+  if (error) return <p>Ошибка: {(error as any).message}</p>;
 
   return (
     <div className={styles.container}>
@@ -15,7 +21,8 @@ export const MeetingsFieldServicePage = () => {
       <ul className={styles.list}>
         {schedule.map((item: any) => (
           <li key={item.id}>
-            {item.date} ({item.day_of_week}) — {item.adres}, {item.speaker}
+            {item.date} {item.time?.slice(0, 5)} ({item.day_of_week}) —{" "}
+            {item.adres}, {item.speaker}
           </li>
         ))}
       </ul>

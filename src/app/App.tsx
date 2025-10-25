@@ -5,7 +5,7 @@ import { useGetCurrentUserQuery } from "../features/auth/supabaseAuth";
 import { ToastContainer } from "react-toastify";
 
 export const AuthBootstrap = () => {
-  useGetCurrentUserQuery(); //активирует подписку
+  useGetCurrentUserQuery(); //активирует подписку, восстанавливает сессию
   return null;
 };
 
