@@ -13,6 +13,29 @@ export const MeetingsPage = () => {
             <h1 className={styles.title}>ЗБІР "ТРУСКАВЕЦЬ"</h1>
             <h2 className={styles.subtitle}>Розклад зібрань</h2>
         </header>
+        <div className={styles.container}>
+            <div className={styles.iframeContainer}>
+                <iframe
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRrmi-dVFwyXffmU4mDKh0orbqYKLuQE42gg8bX17k8u2_oYB_POhjjg5cQY_-Zz5A1yRsTWJ09u0ut/pubhtml?gid=1557048658&amp;single=true&amp;widget=true&amp;headers=false&amp;range=A1:N85"
+                    width="100%"
+                    height="1200"
+                    frameBorder="0"
+                ></iframe>
+            </div>
+            <div className={styles.iframeContainer}>
+                <iframe
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXVH1Rn_wzvi4ErWnQwGRjWEDAIbh4l6sGPjk7zoiOQ4tCA5RbNavQ4nn5suGyhPCLtXJH4buXWm0_/pubhtml?gid=473603370&amp;single=true&amp;widget=true&amp;headers=false"
+                    width="100%"
+                    height="1200"
+                    frameBorder="0"
+                ></iframe>
+            </div>
+        </div>
+        <div className={styles.temp}>
+        <header className={styles.headerTitle}>
+            <h1 className={styles.title}>ЗБІР "ТРУСКАВЕЦЬ"</h1>
+            <h2 className={styles.subtitle}>Розклад зібрань</h2>
+        </header>
         <div className={styles.weeksContainer}>
             <section className={styles.weeksItem}>
                 <h2 className={styles.weekTitle}>1—7 вересня 2025</h2>
@@ -197,6 +220,7 @@ export const MeetingsPage = () => {
             <section className={styles.weeksItem}>
                 <h2 className={styles.weekTitle}>22—28 вересня 2025</h2>                
             </section>
+        </div>
         </div>
     </div>
     )
