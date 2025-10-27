@@ -26,6 +26,7 @@ export const ServiceMeetings = () => {
       const result = await addEntry(formData).unwrap();
       toast.success("Запись успешно добавлена!");
       console.log("✅ Result:", result);
+      console.log("📋 Schedule:", schedule);
       setFormData({
         date: "",
         time: "",
@@ -58,7 +59,7 @@ export const ServiceMeetings = () => {
             <li key={item.id} className={styles.scheduleItem}>
               <div>
                 <span>{item.date}</span>
-                <span>{item.time}</span>
+                <span>{item.time.slice(0, 5)}</span>
                 <span>({item.day_of_week}) - </span>
                 <span>{item.adres}, </span>
                 <span>{item.speaker}</span>
@@ -81,7 +82,7 @@ export const ServiceMeetings = () => {
         />
         <input
           className={styles.inputField}
-          placeholder="Час"
+          placeholder="Час(00:00)"
           value={formData.time}
           onChange={(e) => setFormData({ ...formData, time: e.target.value })}
         />
