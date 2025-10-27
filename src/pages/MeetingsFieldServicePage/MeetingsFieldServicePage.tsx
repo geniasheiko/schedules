@@ -21,8 +21,13 @@ export const MeetingsFieldServicePage = () => {
       <ul className={styles.list}>
         {schedule.map((item: any) => (
           <li key={item.id}>
-            {item.date} {item.time?.slice(0, 5)} ({item.day_of_week}) —{" "}
-            {item.adres}, {item.speaker}
+            <div>
+              <span>{item.date}</span>
+              <span>{item.time?.slice(0, 5)}</span>
+              <span>({item.day_of_week}) — </span>
+              <span>{item.adres},</span>
+              <span>{item.speaker}</span>
+            </div>
           </li>
         ))}
       </ul>
