@@ -55,6 +55,29 @@ export const MeetingsFieldsServiceApi = createApi({
       },
       invalidatesTags: ["ServiceSchedule"],
     }),
+    //обновление записи
+    updateEntry: build.mutation<
+      any,
+      {
+        id: string;
+        date: string;
+        time: string;
+        day_of_week: string;
+        adres: string;
+        speaker: string;
+      }
+    >({
+      async queryFn({ id, ...updatedFields }) {
+        const { error } = await supabase
+          .from("service_overseer_schedule")
+          .update(updatedFields)
+          .eq("id", id);
+
+        if (error) return { error };
+        return { data: true };
+      },
+      invalidatesTags: ["ServiceSchedule"],
+    }),
   }),
 });
 
@@ -62,4 +85,5 @@ export const {
   useGetMeetingsFieldsServiceQuery,
   useAddEntryMutation,
   useDeleteEntryMutation,
+  useUpdateEntryMutation,
 } = MeetingsFieldsServiceApi;

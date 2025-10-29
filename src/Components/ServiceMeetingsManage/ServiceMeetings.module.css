@@ -33,6 +33,13 @@ h3 {
   margin-top: -10px;
 }
 
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
+}
+
 .inputGroup {
   display: flex;
   flex-direction: row;
