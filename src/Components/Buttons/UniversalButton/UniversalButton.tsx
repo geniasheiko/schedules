@@ -3,7 +3,7 @@ import styles from "./UniversalButton.module.css"; //!!
 
 type UniversalButtonPropsType = {
   onClick?: () => void;
-  // disabled?: boolean;
+  disabled?: boolean;
   type?: "button" | "submit" | "reset";
   className?: string;
   children?: ReactNode;
@@ -13,7 +13,7 @@ type UniversalButtonPropsType = {
 
 export const UniversalButton = ({
   onClick,
-  // disabled,
+  disabled,
   type = "button",
   // type,
   className,
@@ -25,7 +25,7 @@ export const UniversalButton = ({
     <button
       onClick={onClick}
       type={type}
-      // disabled={disabled}
+      disabled={disabled}
       // className={className}
       className={`${styles.button} ${color ? styles[color] : ""} ${
         className ?? ""
