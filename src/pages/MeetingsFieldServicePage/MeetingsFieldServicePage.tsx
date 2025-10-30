@@ -1,9 +1,7 @@
 import { useGetMeetingsFieldsServiceQuery } from "../../store/MeetingsFieldsServiceApi";
 import styles from "./MeetingsFieldServicePage.module.css";
-// import { useServiceOverseerSchedule } from "../../utils/hooks/useServiceOverseerSchedule";
 
 export const MeetingsFieldServicePage = () => {
-  // const { schedule, loading, error } = useServiceOverseerSchedule();
   const {
     data: schedule = [],
     isLoading,
@@ -20,10 +18,12 @@ export const MeetingsFieldServicePage = () => {
       </header>
       <ul className={styles.list}>
         <li className={styles.listHeader}>
-            <span className={`${styles.listDate} ${styles.item}`}>Дата</span>
-            <span className={`${styles.listTime} ${styles.item}`}>Час</span>
-            <span className={`${styles.listAddress} ${styles.item}`}>Адреса</span>
-            <span className={`${styles.listSpeaker} ${styles.item}`}>Ведучий</span>
+          <span className={`${styles.listDate} ${styles.item}`}>Дата</span>
+          <span className={`${styles.listTime} ${styles.item}`}>Час</span>
+          <span className={`${styles.listAddress} ${styles.item}`}>Адреса</span>
+          <span className={`${styles.listSpeaker} ${styles.item}`}>
+            Ведучий
+          </span>
         </li>
         {schedule.map((item: any) => (
           <li key={item.id} className={styles.listItem}>
