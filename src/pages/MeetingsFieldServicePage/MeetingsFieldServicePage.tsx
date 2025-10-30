@@ -29,7 +29,7 @@ export const MeetingsFieldServicePage = () => {
           <li key={item.id} className={styles.listItem}>
             <span className={`${styles.listDate} ${styles.item}`}>{item.date}, {item.day_of_week}</span>
             <span className={`${styles.listTime} ${styles.item}`}>{item.time?.slice(0, 5)}</span>
-            <span className={`${styles.listAddress} ${styles.item}`}>{item.adres},</span>
+            <span className={`${styles.listAddress} ${styles.item}`}>{item.adres}</span>
             <span className={`${styles.listSpeaker} ${styles.item}`}>{item.speaker}</span>
           </li>
         ))}

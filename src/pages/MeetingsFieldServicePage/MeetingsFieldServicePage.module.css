@@ -73,23 +73,38 @@ h2 {
 }
 
 .list .item {
-  width: 20%;
-  color: #000;
+    color: #000;
+}
+
+.list .item:not(:first-child, :last-child) {
+     padding: 0 10px;
 }
 
 .list .listHeader .item {
-  font-weight: 700;
-  padding: 20px 0;
-  color: #000;
+    font-weight: 700;
+    padding: 20px 0;
+    color: #000;
+}
+
+.list .listHeader .item:not(:last-child, :first-child) {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .list .item.listTime {
-  width: 10%;
+    width: 12%;
 }
 
-.list .item.listDay,
+.list .item.listDate {
+    width: 13%;
+}
+
+.list .item.listSpeaker {
+    width: 35%;
+}
+
 .list .item.listAddress {
-  width: 25%;
+    width: 40%;
 }
 
 @media (max-width: 768px) {
