@@ -43,41 +43,40 @@ h2 {
 }
 
 .list {
-  border: 1px solid #e7e6e4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;  
   background: #fff;
   padding: 20px;
-  border-radius: 12px;
   margin-bottom: 30px;
   box-shadow: 0 2px 8px 0 #a5d6a733;
 }
 
 .list .listHeader {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin: -20px -20px 10px;
-    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
     background-color: #f0f0ef;
 }
 
 .list li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+  width: calc(25% - 10px);
+  border: 1px solid #e7e6e4;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.list .listItem:not(:last-child) {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e7e6e4;
+.list div {
+    width: 100%;
 }
 
 .list .item {
     color: #000;
-}
-
-.list .item:not(:first-child, :last-child) {
-     padding: 0 10px;
 }
 
 .list .listHeader .item {
@@ -86,25 +85,23 @@ h2 {
     color: #000;
 }
 
-.list .listHeader .item:not(:last-child, :first-child) {
-    padding-left: 10px;
-    padding-right: 10px;
+.list .listContent {
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.list .item.listTime {
-    width: 12%;
+.list .listContent .item {
+    padding: 20px 0;
 }
 
-.list .item.listDate {
-    width: 13%;
+.listDate {
+    margin-right: 20px;
 }
 
-.list .item.listSpeaker {
-    width: 35%;
-}
-
-.list .item.listAddress {
-    width: 40%;
+@media (max-width: 992px) {
+    .list li {
+        width: calc(50% - 10px);
+    }
 }
 
 @media (max-width: 768px) {
@@ -123,6 +120,13 @@ h2 {
   .title .subtitle {
     font-size: 30px;
   }
+  .list li {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+
 }
 
 @page {

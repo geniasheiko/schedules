@@ -16,7 +16,7 @@ export const MeetingsFieldServicePage = () => {
         <h1 className={styles.title}>ЗБІР "ТРУСКАВЕЦЬ"</h1>
         <h2 className={styles.subtitle}>Зустрічі для служіння</h2>
       </header>
-      <ul className={styles.list}>
+      {/* <ul className={styles.list}>
         <li className={styles.listHeader}>
           <span className={`${styles.listDate} ${styles.item}`}>Дата</span>
           <span className={`${styles.listTime} ${styles.item}`}>Час</span>
@@ -31,6 +31,20 @@ export const MeetingsFieldServicePage = () => {
             <span className={`${styles.listTime} ${styles.item}`}>{item.time?.slice(0, 5)}</span>
             <span className={`${styles.listAddress} ${styles.item}`}>{item.adres}</span>
             <span className={`${styles.listSpeaker} ${styles.item}`}>{item.speaker}</span>
+          </li>
+        ))}
+      </ul> */}
+      <ul className={styles.list}>
+        {schedule.map((item: any) => (
+          <li key={item.id} className={styles.listItem}>
+            <div className={styles.listHeader}>
+                <span className={`${styles.listDate} ${styles.item}`}>{item.date}, {item.day_of_week}</span>
+                <span className={`${styles.listTime} ${styles.item}`}>{item.time?.slice(0, 5)}</span>
+            </div>
+            <div className={styles.listContent}>
+                <span className={`${styles.listAddress} ${styles.item}`}>{item.adres}</span>
+                <span className={`${styles.listSpeaker} ${styles.item}`}>{item.speaker}</span>
+            </div>       
           </li>
         ))}
       </ul>
