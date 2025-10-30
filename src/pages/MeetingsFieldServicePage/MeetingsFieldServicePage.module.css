@@ -69,6 +69,7 @@ h2 {
   border: 1px solid #e7e6e4;
   border-radius: 12px;
   overflow: hidden;
+  margin-bottom: 5px;
 }
 
 .list div {
@@ -122,6 +123,7 @@ h2 {
   }
   .list li {
       width: 100%;
+      margin-bottom: 10px;
   }
 }
 

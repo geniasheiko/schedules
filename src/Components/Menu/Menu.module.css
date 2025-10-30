@@ -1,9 +1,10 @@
 .menu {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 20px 10px;
+    padding: 10px;
     background: #fff;
     max-width: 1200px;
+    margin: auto;
 }
 
 .link {
@@ -15,4 +16,10 @@
 .link:not(:last-child):after{
     content: "|";
     margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .menu {
+       padding-left: 20px; 
+    }
 }

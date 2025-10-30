@@ -4,3 +4,14 @@ h1.headerTitle {
   text-transform: uppercase;
   color: #4d4947;
 }
+
+.headerTitle .text {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    h1.headerTitle {
+        display: flex;
+        flex-direction: column;
+    }
+}

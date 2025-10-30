@@ -7,23 +7,25 @@ export const Menu = () => {
 
   return (
     <nav className={styles.menu}>
-      <Link to="/" className={styles.link}>
-        Запис на стенд
-      </Link>
-      <Link to="/meetings" className={styles.link}>
-        Розклад зібрань
-      </Link>
-      <Link to="/lists" className={styles.link}>
-        Списки
-      </Link>
-      <Link to="/meetings-for-field-service" className={styles.link}>
-        Зустрічі для служіння
-      </Link>
-      {!isLoading && data?.user && data.isAdmin && (
-        <Link to="/admin/dashboard" className={styles.link}>
-          Dashboard
+      <div className={styles.menuWrap}>
+        <Link to="/" className={styles.link}>
+          Запис на стенд
         </Link>
-      )}
+        <Link to="/meetings" className={styles.link}>
+          Розклад зібрань
+        </Link>
+        <Link to="/lists" className={styles.link}>
+          Списки
+        </Link>
+        <Link to="/meetings-for-field-service" className={styles.link}>
+          Зустрічі для служіння
+        </Link>
+        {!isLoading && data?.user && data.isAdmin && (
+          <Link to="/admin/dashboard" className={styles.link}>
+            Dashboard
+          </Link>
+        )}
+      </div>
     </nav>
   );
 };
