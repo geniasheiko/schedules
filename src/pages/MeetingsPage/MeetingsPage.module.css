@@ -38,13 +38,26 @@ h2 {
     align-items: baseline;
 }
 
+.publicTalkBlock,
+.watchtowerBlock,
+.fieldServiceBlock {
+    margin: 0 -20px 20px;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #d5d4d2;
+}
+
+.publicTalkTitleText {
+    font-size: 24px;
+    font-weight: 700;
+}
+
 .headerTitle h2.subtitle {
     font-size: 30px;
     border: none;
     color: unset;
 }
 
-.time{
+.time {
     margin-right: 15px;
     color: #555;
 }
@@ -72,23 +85,36 @@ h2 {
     color: #98121D;
 }
 
-.weeksContainer {
-
-}
-
-.weeksItem {
-    
+.weekTitle {
+    border-bottom: 2px solid #a29d9a;
 }
 
 .weekContent {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
     margin-bottom: 40px;
 }
 
+.cleaningkWrapper {
+    width: 100%;
+    background-color: #e7e6e4;
+    border-radius: 4px;
+}
+
+.cleaningkWrapper .person {
+    font-weight: 600;   
+    color: #555;
+    font-size: 16px;
+}
+
 .lifeMinistryWrapper {
     width: calc(50% - 20px);
+}
+
+.lifeMinistryWrapper .cleaningkWrapper {
+    display: none;
 }
 
 .watchtowerPublicTalkWrapper {
@@ -96,10 +122,18 @@ h2 {
     background: #f1f1f1;
     padding: 20px;
     border-radius: 8px;
+    height: max-content;
+}
+
+.watchtowerPublicTalkWrapper .weekFooter {
+    border: none;
+    padding: 0;
 }
 
 .watchtowerPublicTalkTitle {
-    margin: 0 0 20px;
+    margin: 0 -20px 20px;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #d5d4d2;
 }
 
 .lifeMinistryTitle {
@@ -112,8 +146,11 @@ h2 {
 }
 
 .watchtowerText,
-.publicTalkText {
+.publicTalkText,
+.fieldServiceText {
     font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 2px;
 }
 
 .publicTalkContent {
@@ -123,10 +160,6 @@ h2 {
 
 .lifeMinistryContent {
     padding-left: 15px;
-}
-
-.topBlock {
-    margin-bottom: 10px;
 }
 
 .personRole {
@@ -151,18 +184,25 @@ h2 {
 .ministryTitle,
 .lifeTitle,
 .publicTalkTitle,
-.watchtowerTitle {
+.watchtowerTitle,
+.fieldServiceTitle {
     display: flex;
     align-items: end;
     padding-bottom: 10px;
-    border-bottom: 1px solid #000;
+}
+
+.treasuresTitle,
+.ministryTitle,
+.lifeTitle {
+    border-bottom: 1px solid #d5d4d2;
 }
 
 .treasuresImg,
 .ministryImg,
 .lifeImg,
 .publicTalkImg,
-.watchtowerImg {
+.watchtowerImg,
+.fieldServiceImg {
     width: 40px;
     height: 40px;
     margin-right: 10px;
@@ -182,50 +222,69 @@ h2 {
 }
 
 .weekFooter {
-    padding-top: 15px;
+    padding: 15px 0 0 15px;;
     margin-top: 15px;
-    border-top: 2px solid #000;
+    border-top: 2px solid #d5d4d2;
 }
 
-.footerItem.cleaning{
+.footerItem.cleaning {
     display: flex;
     align-items: baseline;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #000;
+    padding: 10px;
 }
+
 .footerTitle {
     color: #555;
     margin-right: 20px;
 }
 
-@media(max-width: 768px){
+@media(max-width: 768px ) {
     .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 10px;
     }
+
     .weeksItem {
         width: calc(100% - 20px);
     }
+
     .headerTitle {
         flex-direction: column;
     }
+
     .headerTitle h1 {
         font-size: 30px;
         margin-bottom: 0;
     }
+
     .headerTitle .subtitle {
         font-size: 28px;
 	    margin-top: 10px;
     }
+
     .footerItem.service .footerListItem{
         display: flex;
         align-items: baseline;
         flex-wrap: wrap;
     }
+
     .weeksItem:nth-child(odd){
         border: none;
+    }
+
+    .lifeMinistryWrapper,
+    .watchtowerPublicTalkWrapper {
+        width: 100%;
+    }
+
+    .cleaningkWrapper {
+        margin-top: 15px;
+    }
+
+    .lifeMinistryWrapper .cleaningkWrapper {
+        display: block;
+        margin: 15px 0 25px;
     }
 }
 
@@ -296,7 +355,9 @@ h2 {
         font-weight: 700;
     }
 
-    .treasuresTitle, .ministryTitle, .lifeTitle {
+    .treasuresTitle,
+    .ministryTitle,
+    .lifeTitle {
         margin: 0 0 4px 0 !important;
         padding: 0 0 4px 0 !important;
         width: 85% !important;
@@ -311,7 +372,10 @@ h2 {
         margin: 0 !important;
     }
 
-    .treasuresText, .ministryText, .lifeText {
+    .treasuresText,
+    .ministryText,
+    .lifeTextб
+    .ministryText {
         font-size: 9pt !important;
         font-weight: 700;
     }
@@ -365,7 +429,7 @@ h2 {
 /*==================================================*/
 
 .temp {
-    display: none;
+    /* display: none; */
 }
 
 .iframeContainer {

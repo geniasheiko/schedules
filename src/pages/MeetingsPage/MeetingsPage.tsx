@@ -4,6 +4,7 @@ import applyImg from "../../assets/apply.png";
 import livingImg from "../../assets/living.png";
 import publicTalkImg from "../../assets/speech.png";
 import watchtowerImg from "../../assets/watchtower.png";
+import fieldServiceImg from "../../assets/kingdom-ministry.png";
 // import servicesImg from "../../assets/services.png";
 
 export const MeetingsPage = () => {
@@ -152,6 +153,8 @@ export const MeetingsPage = () => {
                                     </li>
                                 </ul>
                             </div>
+                        </footer>
+                        <div className={styles.cleaningkWrapper}>
                             <div className={`${styles.footerItem} ${styles.cleaning}`}>
                                 <h3 className={styles.footerTitle}>ПРИБИРАННЯ</h3>
                                 <div className={styles.footerList}>
@@ -161,24 +164,24 @@ export const MeetingsPage = () => {
                                     </div>
                                 </div>
                             </div>
-                        </footer>
+                        </div>
                     </div>
                     <div className={styles.watchtowerPublicTalkWrapper}>
                         <h3 className={styles.watchtowerPublicTalkTitle}>Публічна промова та Вартова башта</h3>
                         <div className={styles.watchtowerPublicTalkContent}>
-                            <div className={styles.topBlock}>
-                                <div className={styles.chairman}>
-                                    <span className={styles.personRole}>Ведучий, молитва:</span>
-                                    <span className={styles.person}>Філатов В.</span>
-                                </div>
-                                <div className={styles.introductionConclusion}>
-                                    <span>Пісня 31</span>
-                                </div>
-                            </div>
                             <div className={styles.publicTalkBlock}>
                                 <div className={styles.publicTalkTitle}>
                                     <img className={styles.publicTalkImg} src={publicTalkImg} alt="Публічна промова" />
                                     <h3 className={styles.publicTalkText}>Публічна промова</h3>
+                                </div>
+                                <div className={styles.topBlock}>
+                                    <div className={styles.chairman}>
+                                        <span className={styles.personRole}>Ведучий, молитва:</span>
+                                        <span className={styles.person}>Філатов В.</span>
+                                    </div>
+                                    <div className={styles.introductionConclusion}>
+                                        <span>Пісня 31</span>
+                                    </div>
                                 </div>
                                 <div className={styles.publicTalkContent}>
                                     <span className={styles.publicTalkTitleText}>«Чому ми віримо в Бога?»</span>
@@ -205,6 +208,48 @@ export const MeetingsPage = () => {
                                 </div>
                                 <div className={styles.bottomBlock}>
 
+                                </div>
+                            </div>
+                            <div className={styles.fieldServiceBlock}>
+                                <div className={styles.fieldServiceTitle}>
+                                    <img className={styles.fieldServiceImg} src={fieldServiceImg} alt="Зустріч для служіння" />
+                                    <h3 className={styles.fieldServiceText}>Зустріч для служіння</h3>
+                                </div>
+                                <div className={styles.fieldServiceContent}>
+                                    <div className={styles.fieldServiceWrap}>
+                                        <span className={styles.personRole}>Ведучий:</span>
+                                        <span className={styles.person}>Паталаха М.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <footer className={styles.weekFooter}>
+                                <div className={`${styles.footerItem} ${styles.service}`}>
+                                    <h3 className={styles.footerTitle}>ОБСЛУГОВУВАННЯ</h3>
+                                    <ul className={styles.footerList}>
+                                        <li className={styles.footerListItem}>
+                                            <span className={styles.personRole}>Мікшер | Сцена:</span>
+                                            <span className={styles.person}>Залокоцький Н. | Дзюбанов А.</span>
+                                        </li>
+                                        <li className={styles.footerListItem}>
+                                            <span className={styles.personRole}>Обслуговуючі:</span>
+                                            <span className={styles.person}>Паталаха М. | Кондаревич В.</span>
+                                        </li>
+                                        <li className={styles.footerListItem}>
+                                            <span className={styles.personRole}>Мікрофони:</span>
+                                            <span className={styles.person}>Сворень Я. | Салань А.</span>
+                                        </li>
+                                    </ul>
+                                </div>                                
+                            </footer>
+                        </div>
+                    </div>
+                    <div className={styles.cleaningkWrapper}>
+                        <div className={`${styles.footerItem} ${styles.cleaning}`}>
+                            <h3 className={styles.footerTitle}>ПРИБИРАННЯ</h3>
+                            <div className={styles.footerList}>
+                                <div className={styles.footerListItem}>
+                                    <span className={styles.personRole}>Група</span>
+                                    <span className={styles.person}>1</span>
                                 </div>
                             </div>
                         </div>
