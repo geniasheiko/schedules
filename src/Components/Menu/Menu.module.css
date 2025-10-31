@@ -3,9 +3,13 @@
     flex-wrap: wrap;
     padding: 10px 0;
     background: #fff;
-    max-width: 800px;
     margin: auto;
     width: 100%;
+}
+
+.menuWrap {
+    max-width: 800px;
+    margin: auto;
 }
 
 .link {

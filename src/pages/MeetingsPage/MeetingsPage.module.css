@@ -245,10 +245,6 @@ h2 {
         padding: 0 10px;
     }
 
-    .weeksItem {
-        width: calc(100% - 20px);
-    }
-
     .headerTitle {
         flex-direction: column;
     }
