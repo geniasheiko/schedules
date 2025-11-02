@@ -5,6 +5,8 @@ export const MeetingsFieldsServiceApi = createApi({
   reducerPath: "MeetingsFieldsServiceApi",
   baseQuery: fakeBaseQuery(),
   tagTypes: ["ServiceSchedule"],
+  refetchOnFocus: true,
+  refetchOnReconnect: true,
 
   endpoints: (build) => ({
     //получаем расписание

@@ -3,6 +3,8 @@ import type { ScheduleSlot } from "../../types/schedule";
 import { scheduleTimes } from "../../constatns/scheduleTimes";
 import { useDayScheduleHandlers } from "./useDayScheduleHandlers";
 import { UniversalButton } from "../Buttons/UniversalButton/UniversalButton";
+import { useState } from "react";
+import { ConfirmModal } from "../ConfirmModal/ConfirmModal";
 
 type DayScheduleProps = {
   dayName: string;
@@ -23,6 +25,26 @@ export const DaySchedule = ({
 }: DayScheduleProps) => {
   const { inputs, handleInputChange, handleBook, handleDelete } =
     useDayScheduleHandlers(onBook, onDelete, loading);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [deleteName, setDeleteName] = useState<string | undefined>(undefined);
+  const confirmDelete = (slotId: string, bookedName?: string) => {
+    setDeleteId(slotId);
+    setDeleteName(bookedName || "-");
+    setIsModalOpen(true);
+  };
+
+  const handleConfirm = () => {
+    if (deleteId) handleDelete(deleteId);
+    setIsModalOpen(false);
+    setDeleteId(null);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setDeleteId(null);
+  };
 
   // Group slots by location and time
   const groupedByLocation: Record<string, Record<string, ScheduleSlot[]>> = {};
@@ -77,7 +99,13 @@ export const DaySchedule = ({
                         />
                         <UniversalButton
                           //  label="Видалити"
-                          onClick={() => handleDelete(current.id)}
+                          onClick={() =>
+                            confirmDelete(
+                              current.id,
+                              current.booked_person_name ?? "-"
+                            )
+                          }
+                          // onClick={() => handleDelete(current.id)}
                           disabled={loading}
                           color="primary"
                           type="button"
@@ -109,6 +137,17 @@ export const DaySchedule = ({
           })}
         </div>
       ))}
+
+      <ConfirmModal
+        isOpen={isModalOpen}
+        message="Ви дійсно хочете видалити цей запис"
+        // message={`Ви дійсно хочете видалити цей запис ${
+        //   deleteName ? `"${deleteName}"` : ""
+        // }?`}
+        highlight={deleteName}
+        onConfirm={handleConfirm}
+        onCancel={handleCancel}
+      />
     </div>
   );
 };
