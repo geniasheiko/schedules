@@ -14,7 +14,7 @@ export const AuthBootstrap = () => {
 export const App = () => {
   useEffect(() => {
     const interval = setInterval(async () => {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("service_overseer_schedule")
         .select("count");
       if (error) {

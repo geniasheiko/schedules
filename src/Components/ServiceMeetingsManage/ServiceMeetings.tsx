@@ -50,7 +50,7 @@ export const ServiceMeetings = () => {
   useEffect(() => {
     const handleFocus = async () => {
       console.log("👀 Tab active again, reinitializing Supabase session...");
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("service_overseer_schedule")
         .select("count");
       if (error) console.warn("⚠️ Supabase reconnect error:", error.message);
