@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { UniversalButton } from "../Buttons/UniversalButton/UniversalButton";
 import styles from "./ServiceMeetings.module.css";
@@ -8,6 +8,7 @@ import {
   useGetMeetingsFieldsServiceQuery,
   useUpdateEntryMutation,
 } from "@/store/MeetingsFieldsServiceApi";
+import { supabase } from "@/utils/supabase/supabase";
 
 export const ServiceMeetings = () => {
   const { data: schedule = [], isLoading } = useGetMeetingsFieldsServiceQuery();
@@ -31,6 +32,33 @@ export const ServiceMeetings = () => {
     adres: "",
     speaker: "",
   });
+
+  useEffect(() => {
+    const checkConnection = async () => {
+      const { data, error } = await supabase
+        .from("service_overseer_schedule")
+        .select("count");
+      console.log("🟢 Ping Supabase", { data, error });
+    };
+
+    const interval = setInterval(checkConnection, 30000);
+    checkConnection();
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleFocus = async () => {
+      console.log("👀 Tab active again, reinitializing Supabase session...");
+      const { error } = await supabase
+        .from("service_overseer_schedule")
+        .select("count");
+      if (error) console.warn("⚠️ Supabase reconnect error:", error.message);
+    };
+
+    window.addEventListener("focus", handleFocus);
+    return () => window.removeEventListener("focus", handleFocus);
+  }, []);
 
   const handleAdd = async () => {
     console.log("🔥 handleAdd clicked", formData);
@@ -81,17 +109,6 @@ export const ServiceMeetings = () => {
       await updateEntry({ id: editingId!, ...editData }).unwrap();
       toast.success("Запис оновлено!");
       setEditingId(null);
-
-      // if (!editingId) {
-      //   console.error("❌ Нет ID для редактирования!");
-      //   return;
-      // }
-      // try {
-      //   await updateEntry({ id: editingId!, ...editData }).unwrap();
-      //   toast.success("Запис оновлено!");
-      //   console.log("Я тут!");
-      //   setEditingId(null); // выход из режима редактирования
-      // }
     } catch {
       // console.error("🚨 Полный объект ошибки API:", e);
       toast.error("Помилка при редагуванні запису");
@@ -103,7 +120,6 @@ export const ServiceMeetings = () => {
       <h3>Зустрічі для служіння</h3>
       <div className={styles.listSection}>
         {isLoading && <p>Завантаження...</p>}
-        {/* {error && <p>Ошибка: {error.message}</p>} */}
         <ul>
           {schedule.map((item) => (
             <li key={item.id} className={styles.scheduleItem}>
