@@ -425,7 +425,7 @@ h2 {
 /*==================================================*/
 
 .temp {
-    /* display: none; */
+    display: none;
 }
 
 .iframeContainer {
