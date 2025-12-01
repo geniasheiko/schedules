@@ -60,7 +60,7 @@ a {
 
 .schedulesLink:before {
     content: '';
-    background-image: url("../../assets/week.png");
+    background-image: url("../../assets/calendar.jpg");
     background-size: contain;
     display: block;
     margin-right: 10px;

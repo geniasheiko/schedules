@@ -49,7 +49,7 @@ h2 {
 }
 .schedulesLink:before {
     content: '';
-    background-image: url("../../assets/guidelines.png");
+    background-image: url("../../assets/document.jpg");
     background-size: contain;
     display: block;
     margin-right: 10px;

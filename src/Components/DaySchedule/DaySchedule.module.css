@@ -17,6 +17,10 @@
   margin: -20px -20px -10px;
   padding: 0 20px;
   background-color: #f0f0ef;
+  background-image: url("../../assets/lff-calendar.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: 10px 15px;
 }
 
 .daySchedule h2 {
@@ -137,5 +141,11 @@ button:disabled {
   .daySchedule .dateScheduleHeader h2 {
     margin: 0;
     padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .daySchedule .dateScheduleHeader {
+      padding-left: 60px;
   }
 }
