@@ -24,6 +24,7 @@ export const Header = () => {
     <div className={styles.header}>
       <div className={styles.topLinks}>
         <div className={styles.wrapper}>
+          <span className={styles.congTitle}>Трускавець (14001)</span>
           {!isLoading && (
             <button
               onClick={data?.user ? logoutHandler : loginHandler}

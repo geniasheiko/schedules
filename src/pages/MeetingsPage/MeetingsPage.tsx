@@ -10,12 +10,17 @@ import fieldServiceImg from "../../assets/kingdom-ministry.png";
 export const MeetingsPage = () => {
     return (
     <div className={styles.container}>
+        <div className={styles.wrapper}>
         <header className={styles.headerTitle}>
-            <h1 className={styles.title}>ЗБІР "ТРУСКАВЕЦЬ"</h1>
-            <h2 className={styles.subtitle}>Розклад зібрань</h2>
+            <h1 className={styles.subtitle}>Розклад зібрань</h1>
         </header>
-        <div className={styles.container}>
-            <div className={styles.iframeContainer}>
+        {/* <div className={styles.container}> */}
+        <div>
+            <h3 className={styles.lifeMinistryTitle}>Публічна промова та Вартова башта</h3>
+            <a className={styles.schedulesLink} target="_blank" href="https://drive.google.com/file/d/17KxMjRanp2yG3IcO7YqrHeyZrrLk19nt/view">Відкрити графік</a>
+            <h3 className={styles.lifeMinistryTitle}>Життя і служіння</h3>
+            <a className={styles.schedulesLink} target="_blank" href="https://drive.google.com/file/d/1AALdON435Af9IbkY0ZPsaOfpbkiTpxmF/view">Відкрити графік</a>
+            {/* <div className={styles.iframeContainer}>
                 <iframe
                     src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRrmi-dVFwyXffmU4mDKh0orbqYKLuQE42gg8bX17k8u2_oYB_POhjjg5cQY_-Zz5A1yRsTWJ09u0ut/pubhtml?gid=1557048658&amp;single=true&amp;widget=true&amp;headers=false&amp;range=A1:N85"
                     width="100%"
@@ -30,7 +35,7 @@ export const MeetingsPage = () => {
                     height="1200"
                     frameBorder="0"
                 ></iframe>
-            </div>
+            </div> */}
         </div>
         <div className={styles.temp}>
         <header className={styles.headerTitle}>
@@ -265,6 +270,7 @@ export const MeetingsPage = () => {
             <section className={styles.weeksItem}>
                 <h2 className={styles.weekTitle}>22—28 вересня 2025</h2>                
             </section>
+        </div>
         </div>
         </div>
     </div>

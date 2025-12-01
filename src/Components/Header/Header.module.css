@@ -15,12 +15,17 @@
   padding: 5px 0;
 }
 
+.congTitle {
+  color: #fff;
+}
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  justify-content: flex-end; /* кнопка справа, но в пределах контейнера */
+  align-items: center;
+  justify-content: space-between;
 }
 
 .loginLink {
@@ -77,14 +82,5 @@
 @media (max-width: 768px) {
   .header {
     align-items: start;
-  }
-  .wrapper {
-    justify-content: flex-start;
-  }
-}
-
-@media print {
-  .header {
-    display: none !important;
   }
 }

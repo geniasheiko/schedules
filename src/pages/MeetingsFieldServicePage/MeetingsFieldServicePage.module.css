@@ -30,6 +30,14 @@ h2 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background: #F8F8F7;
+  height: calc(100vh - 128px);
+}
+
+.wrapper {
+  max-width: 800px;
+  padding: 10px 18px;
+  margin: 0 auto;
 }
 
 .headerTitle {
@@ -47,10 +55,11 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;  
-  background: #fff;
+  /* background: #fff;
   padding: 20px;
+  border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: 0 2px 8px 0 #a5d6a733;
+  box-shadow: 0 2px 8px 0 #a5d6a733; */
 }
 
 .list .listHeader {
@@ -65,7 +74,7 @@ h2 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: calc(25% - 10px);
+  width: calc(50% - 10px);
   border: 1px solid #e7e6e4;
   border-radius: 12px;
   overflow: hidden;
