@@ -34,6 +34,27 @@
   margin-top: 30px;
 }
 
+.daySchedule:first-child h3:after {
+
+}
+
+.daySchedule:first-child .locationBlock .timeRow:nth-child(2) {
+  position: relative;
+  padding: 50px 10px 20px;
+  margin-left: -5px;
+  margin-right: -5px;
+  background: #f8f8f7;
+  border-radius: 6px;
+}
+
+.daySchedule:first-child .locationBlock .timeRow:nth-child(2):before {
+  content: 'Лікарня';
+  position: absolute;
+  top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 .locationBlock > h3 {
   color: #4d4947;
   margin-bottom: 20px;

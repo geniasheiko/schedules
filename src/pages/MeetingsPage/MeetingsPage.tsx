@@ -20,22 +20,6 @@ export const MeetingsPage = () => {
             <a className={styles.schedulesLink} target="_blank" href="https://drive.google.com/file/d/17KxMjRanp2yG3IcO7YqrHeyZrrLk19nt/view">Відкрити графік</a>
             <h3 className={styles.lifeMinistryTitle}>Життя і служіння</h3>
             <a className={styles.schedulesLink} target="_blank" href="https://drive.google.com/file/d/1AALdON435Af9IbkY0ZPsaOfpbkiTpxmF/view">Відкрити графік</a>
-            {/* <div className={styles.iframeContainer}>
-                <iframe
-                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRrmi-dVFwyXffmU4mDKh0orbqYKLuQE42gg8bX17k8u2_oYB_POhjjg5cQY_-Zz5A1yRsTWJ09u0ut/pubhtml?gid=1557048658&amp;single=true&amp;widget=true&amp;headers=false&amp;range=A1:N85"
-                    width="100%"
-                    height="1200"
-                    frameBorder="0"
-                ></iframe>
-            </div>
-            <div className={styles.iframeContainer}>
-                <iframe
-                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXVH1Rn_wzvi4ErWnQwGRjWEDAIbh4l6sGPjk7zoiOQ4tCA5RbNavQ4nn5suGyhPCLtXJH4buXWm0_/pubhtml?gid=473603370&amp;single=true&amp;widget=true&amp;headers=false"
-                    width="100%"
-                    height="1200"
-                    frameBorder="0"
-                ></iframe>
-            </div> */}
         </div>
         <div className={styles.temp}>
         <header className={styles.headerTitle}>

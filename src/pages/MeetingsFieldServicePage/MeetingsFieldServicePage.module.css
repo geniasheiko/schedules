@@ -5,6 +5,7 @@ body {
   min-width: unset;
   min-height: unset;
   background: unset;
+  overflow: hidden;
 }
 ul {
   padding: 0;
@@ -31,7 +32,7 @@ h2 {
   margin: 0 auto;
   padding: 20px;
   background: #F8F8F7;
-  height: calc(100vh - 128px);
+  height: 100vh;
 }
 
 .wrapper {
@@ -54,12 +55,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 10px;  
-  /* background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 8px 0 #a5d6a733; */
+  gap: 10px;
 }
 
 .list .listHeader {

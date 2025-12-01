@@ -5,6 +5,7 @@ body{
     min-width: unset;
     min-height: unset;
     background: unset;
+    overflow: hidden;
 }
 ul {
     padding: 0;
@@ -32,7 +33,7 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     background: #F8F8F7;
-    height: calc(100vh - 128px);
+    height: 100vh;
 }
 
 .wrapper {
@@ -439,22 +440,13 @@ a {
 }
 
 /*==================================================*/
-/*============ Temp styles for iframe ==============*/
+/*================= Temp styles ====================*/
 /*==================================================*/
 
 .temp {
     display: none;
 }
 
-.iframeContainer {
-    overflow: hidden;
-    margin: 20px 0 80px;
-}
-
-iframe {
-    margin: -29px -1px -33px;
-}
-
 /*==================================================*/
-/*========== END Temp styles for iframe ============*/
+/*================ END Temp styles =================*/
 /*==================================================*/

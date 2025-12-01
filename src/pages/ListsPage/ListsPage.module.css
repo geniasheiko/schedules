@@ -5,6 +5,7 @@ body{
     min-width: unset;
     min-height: unset;
     background: unset;
+    overflow: hidden;
 }
 ul {
     padding: 0;
@@ -31,7 +32,8 @@ h2 {
     max-width: 1200px;
     margin: 0 auto;
     background: #F8F8F7;
-    height: calc(100vh - 90px);
+    height: 100vh;
+    padding: 20px;
 }
 
 .wrapper {
@@ -50,6 +52,12 @@ h2 {
     margin: 15px 0;
 }
 
+.headerTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 @media(max-width: 768px){
     .container {
         max-width: 1200px;
@@ -57,24 +65,3 @@ h2 {
         padding: 0 10px;
     }
 }
-
-/*==================================================*/
-/*============ Temp styles for iframe ==============*/
-/*==================================================*/
-
-.temp {
-    display: none;
-}
-
-.iframeContainer {
-    overflow: hidden;
-    margin: 20px 0 80px;
-}
-
-iframe {
-    margin: -29px -1px -33px;
-}
-
-/*==================================================*/
-/*========== END Temp styles for iframe ============*/
-/*==================================================*/
