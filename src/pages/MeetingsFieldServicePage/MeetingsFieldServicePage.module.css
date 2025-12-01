@@ -65,6 +65,13 @@ h2 {
     background-color: #f0f0ef;
 }
 
+.list .listHeader {
+  background-image: url("../../assets/kingdom-ministry.png");
+  background-size: 13%;
+  background-position: 7px 8px;
+  background-repeat: no-repeat;
+}
+
 .list li {
   display: flex;
   align-items: center;
