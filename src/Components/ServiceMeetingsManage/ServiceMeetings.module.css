@@ -1,90 +1,162 @@
+body {
+  overflow: unset;
+}
+
+h4 {
+  margin-bottom: 0;
+}
+
 .meetingsContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem 20px 20px;
+  padding: 20px 0;
   background: #f8f8f7;
+  margin: 0 auto;
 }
 
 .listSection {
-  display: flex;
-  width: 500px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-h3 {
-}
-
-/* ul {
-  align-items: center;
-} */
-
-.scheduleItem {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
+  max-width: 800px;
 }
 
 .itemButtons {
   justify-content: space-between;
-  margin-top: -10px;
 }
 
 .buttonGroup {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 50px;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  margin-top: auto;
 }
 
 .inputGroup {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   gap: 10px;
   width: 100%;
   margin-top: 20px;
-  /* overflow-x: auto; */
+}
+
+.inputGroup button,
+.buttonGroup button {
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  background-color: #386195;
+  border: 1px solid #386195;
+  color: #f8f8f7;
+  border-radius: 2px;
+}
+
+.buttonGroup button {
+  width: calc(50% - 20px);
 }
 
 .inputField {
   max-width: 100%;
-  width: calc(100% - 40px);
-  background-color: #e7e6e4;
+  width: calc(100% - 16px);
+  background-color: #fff;
   border: 1px solid #d5d4d2;
-  border-radius: 6px;
+  border-radius: 2px;
   padding: 6px 8px;
   font-size: 0.9rem;
   color: #555;
 }
 
-@media (max-width: 768px) {
-  .meetingsContainer {
-    padding: 20px 16px;
-    gap: 20px;
-  }
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
 
+.list .listHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0ef;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: calc(50% - 10px);
+  border: 1px solid #e7e6e4;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 5px;
+  background: #fff;
+  box-shadow: 0 2px 8px 0 #a5d6a733;
+}
+
+.list div {
+    width: 100%;
+}
+
+.list .item {
+    color: #000;
+}
+
+.list .listHeader .item {
+    font-weight: 700;
+    padding: 20px 0;
+    color: #000;
+}
+
+.list .listContent {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.list .listContent .item {
+    padding: 20px 0;
+}
+
+.listDate {
+    margin-right: 20px;
+}
+
+.scheduleItem .inputGroup {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.scheduleItem .inputGroup .inputField {
+  width: calc(100% - 44px);
+}
+
+@media (max-width: 768px) {
   .meetingsContainer h3 {
     font-size: 18px;
   }
 
   .scheduleItem {
-    flex-direction: row;
-    /* align-items: flex-start; */
     gap: 8px;
   }
 
-  .inputGroup {
-    flex-direction: row;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
   }
-
-  .inputField {
-    flex: 1 1 100%;
-    width: 100%;
-    font-size: 13px;
+  .headerTitle {
+    flex-direction: column;
+  }
+  .headerTitle h1 {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+  .title .subtitle {
+    font-size: 30px;
+  }
+  .list li {
+      width: 100%;
+      margin-bottom: 10px;
   }
 }

@@ -118,9 +118,10 @@ export const ServiceMeetings = () => {
   return (
     <div className={styles.meetingsContainer}>
       <h3>Зустрічі для служіння</h3>
+      <h4>Призначені зустрічі</h4>
       <div className={styles.listSection}>
         {isLoading && <p>Завантаження...</p>}
-        <ul>
+        <ul className={styles.list}>
           {schedule.map((item) => (
             <li key={item.id} className={styles.scheduleItem}>
               {editingId === item.id ? (
@@ -162,12 +163,16 @@ export const ServiceMeetings = () => {
                   />
                 </div>
               ) : (
-                <div>
-                  <span>{item.date}</span> <span>{item.time.slice(0, 5)}</span>{" "}
-                  <span>{item.day_of_week} - </span>
-                  <span>{item.adres}, </span>
-                  <span>{item.speaker}</span>
-                </div>
+                <>
+                  <div className={styles.listHeader}>
+                    <span className={`${styles.listDate} ${styles.item}`}>{item.date}, {item.day_of_week}</span>
+                    <span className={`${styles.listTime} ${styles.item}`}>{item.time?.slice(0, 5)}</span>
+                  </div>
+                  <div className={styles.listContent}>
+                    <span className={`${styles.listAddress} ${styles.item}`}>{item.adres}</span>
+                    <span className={`${styles.listSpeaker} ${styles.item}`}>{item.speaker}</span>
+                  </div>
+                </>
               )}
               <div className={styles.buttonGroup}>
                 {editingId === item.id ? (
@@ -188,7 +193,7 @@ export const ServiceMeetings = () => {
           ))}
         </ul>
       </div>
-
+      <h4>Додати нову зустріч</h4>
       <div className={styles.inputGroup}>
         <input
           className={styles.inputField}
