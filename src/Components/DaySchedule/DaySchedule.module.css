@@ -20,7 +20,7 @@
   background-image: url("../../assets/lff-calendar.png");
   background-repeat: no-repeat;
   background-size: 50px;
-  background-position: 10px 15px;
+  background-position: 10px 13px;
 }
 
 .daySchedule h2 {
@@ -146,6 +146,7 @@ button:disabled {
 
 @media (max-width: 480px) {
   .daySchedule .dateScheduleHeader {
-      padding-left: 60px;
+      padding-left: 52px;
+      background-position: 5px 13px;
   }
 }
