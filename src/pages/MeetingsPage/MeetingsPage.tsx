@@ -17,9 +17,8 @@ export const MeetingsPage = () => {
         {/* <div className={styles.container}> */}
         <div>
             <h3 className={styles.lifeMinistryTitle}>Публічна промова та Вартова башта</h3>
-            <a className={styles.schedulesLink} target="_blank" href="https://drive.google.com/file/d/17KxMjRanp2yG3IcO7YqrHeyZrrLk19nt/view">Відкрити графік</a>
             <h3 className={styles.lifeMinistryTitle}>Життя і служіння</h3>
-            <a className={styles.schedulesLink} target="_blank" href="https://drive.google.com/file/d/1AALdON435Af9IbkY0ZPsaOfpbkiTpxmF/view">Відкрити графік</a>
+            <a className={styles.schedulesLink} target="_blank" href="https://drive.google.com/file/d/126fQJcGJjwdisXkspjrMFMWro34YRob0/view">Відкрити графік</a>
         </div>
         <div className={styles.temp}>
         <header className={styles.headerTitle}>
