@@ -16,8 +16,8 @@ export const MeetingsPage = () => {
         </header>
         {/* <div className={styles.container}> */}
         <div>
-            <h3 className={styles.lifeMinistryTitle}>Публічна промова та Вартова башта</h3>
             <h3 className={styles.lifeMinistryTitle}>Життя і служіння</h3>
+            <h3 className={styles.lifeMinistryTitle}>Публічна промова та Вартова башта</h3>
             <a className={styles.schedulesLink} target="_blank" href="https://drive.google.com/file/d/126fQJcGJjwdisXkspjrMFMWro34YRob0/view">Відкрити графік</a>
         </div>
         <div className={styles.temp}>
